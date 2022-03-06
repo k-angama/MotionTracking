@@ -1,0 +1,1880 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0503E5217E0F0C04D9022169 /* Pods_MotionTracking_MotionTrackingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BF5D3B680B2C3F6B7C0813 /* Pods_MotionTracking_MotionTrackingUITests.framework */; };
+		0C90E19F1765353CCEEA3F5B /* Pods_MotionTrackingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F769B037DE57564528091A /* Pods_MotionTrackingTests.framework */; };
+		2502005A27A812FD00952BBD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502005927A812FD00952BBD /* HomeViewModel.swift */; };
+		2502005F27A8135700952BBD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502005E27A8135700952BBD /* BaseViewModel.swift */; };
+		2502006127A8154300952BBD /* TrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502006027A8154300952BBD /* TrackingViewModel.swift */; };
+		2502006327A8156B00952BBD /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502006227A8156B00952BBD /* ResultViewModel.swift */; };
+		2502006627A8831E00952BBD /* InterfaceImage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502006527A8831E00952BBD /* InterfaceImage+Extention.swift */; };
+		2502006827A89BEE00952BBD /* WKInterfaceTimer+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502006727A89BEE00952BBD /* WKInterfaceTimer+Extention.swift */; };
+		2502006A27A9781F00952BBD /* WKInterfaceLabel+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502006927A9781F00952BBD /* WKInterfaceLabel+Extention.swift */; };
+		2502006C27A98ACE00952BBD /* ErrorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502006B27A98ACE00952BBD /* ErrorApp.swift */; };
+		2502006E27A9D0E400952BBD /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502006D27A9D0E400952BBD /* SettingsViewModel.swift */; };
+		2502007027A9D24500952BBD /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502006F27A9D24400952BBD /* Parameters.swift */; };
+		2502007227A9D26C00952BBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502007127A9D26C00952BBD /* Constants.swift */; };
+		2502007427AA839E00952BBD /* WKInterfaceSlider+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502007327AA839E00952BBD /* WKInterfaceSlider+Extention.swift */; };
+		2502007627AA91C800952BBD /* WKInterfacePicker+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502007527AA91C800952BBD /* WKInterfacePicker+Extention.swift */; };
+		2502007827AA91E600952BBD /* WKInterfaceSwitch+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502007727AA91E600952BBD /* WKInterfaceSwitch+Extention.swift */; };
+		2502007A27AABBE300952BBD /* ReadyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502007927AABBE300952BBD /* ReadyInterfaceController.swift */; };
+		2502007C27AAD7D900952BBD /* ReadyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502007B27AAD7D900952BBD /* ReadyViewModel.swift */; };
+		2502007E27AADF3500952BBD /* CurrentSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502007D27AADF3500952BBD /* CurrentSession.swift */; };
+		2502008127AAF10900952BBD /* FileTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502008027AAF10900952BBD /* FileTrackingManager.swift */; };
+		251B96CF27ABC10A00246CAB /* FileTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502008027AAF10900952BBD /* FileTrackingManager.swift */; };
+		251B96D227ABD07E00246CAB /* Date+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251B96D127ABD07E00246CAB /* Date+Extention.swift */; };
+		251B96D327ABE3B400246CAB /* Date+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251B96D127ABD07E00246CAB /* Date+Extention.swift */; };
+		251B96D627AC15F800246CAB /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251B96D527AC15F800246CAB /* BaseViewModel.swift */; };
+		251B96D827AC161100246CAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251B96D727AC161100246CAB /* BaseViewController.swift */; };
+		251B96DA27AC1C3C00246CAB /* FilesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251B96D927AC1C3C00246CAB /* FilesListViewModel.swift */; };
+		254F124027C6975900D7AD88 /* CSVFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254F123F27C6975900D7AD88 /* CSVFileManager.swift */; };
+		25A7E3FD27985C5B00A498AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E3FC27985C5B00A498AA /* AppDelegate.swift */; };
+		25A7E3FF27985C5B00A498AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E3FE27985C5B00A498AA /* SceneDelegate.swift */; };
+		25A7E40127985C5B00A498AA /* FilesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E40027985C5B00A498AA /* FilesListViewController.swift */; };
+		25A7E40427985C5B00A498AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E40227985C5B00A498AA /* Main.storyboard */; };
+		25A7E40627985C5E00A498AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E40527985C5E00A498AA /* Assets.xcassets */; };
+		25A7E40927985C5E00A498AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E40727985C5E00A498AA /* LaunchScreen.storyboard */; };
+		25A7E41427985C5E00A498AA /* MotionTrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E41327985C5E00A498AA /* MotionTrackingTests.swift */; };
+		25A7E41E27985C5E00A498AA /* MotionTrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E41D27985C5E00A498AA /* MotionTrackingUITests.swift */; };
+		25A7E42027985C5E00A498AA /* MotionTrackingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E41F27985C5E00A498AA /* MotionTrackingUITestsLaunchTests.swift */; };
+		25A7E42427985C5E00A498AA /* MotionTracking WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 25A7E42327985C5E00A498AA /* MotionTracking WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		25A7E42A27985C5E00A498AA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E42827985C5E00A498AA /* Interface.storyboard */; };
+		25A7E42C27985C5F00A498AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E42B27985C5F00A498AA /* Assets.xcassets */; };
+		25A7E43227985C5F00A498AA /* MotionTracking WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 25A7E43127985C5F00A498AA /* MotionTracking WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		25A7E43727985C5F00A498AA /* HomeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E43627985C5F00A498AA /* HomeInterfaceController.swift */; };
+		25A7E43927985C5F00A498AA /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E43827985C5F00A498AA /* ExtensionDelegate.swift */; };
+		25A7E43B27985C5F00A498AA /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E43A27985C5F00A498AA /* NotificationController.swift */; };
+		25A7E43D27985C5F00A498AA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E43C27985C5F00A498AA /* ComplicationController.swift */; };
+		25A7E43F27985C6100A498AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E43E27985C6100A498AA /* Assets.xcassets */; };
+		25A7E44B27985C6100A498AA /* MotionTracking_WatchKit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E44A27985C6100A498AA /* MotionTracking_WatchKit_AppTests.swift */; };
+		25A7E45527985C6100A498AA /* MotionTracking_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E45427985C6100A498AA /* MotionTracking_WatchKit_AppUITests.swift */; };
+		25A7E45727985C6100A498AA /* MotionTracking_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E45627985C6100A498AA /* MotionTracking_WatchKit_AppUITestsLaunchTests.swift */; };
+		25A7E47227986BCC00A498AA /* TrackingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E47127986BCC00A498AA /* TrackingInterfaceController.swift */; };
+		25A7E47527987DCA00A498AA /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E47427987DCA00A498AA /* MotionManager.swift */; };
+		25A7E479279955A800A498AA /* ResultInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E478279955A800A498AA /* ResultInterfaceController.swift */; };
+		25A7E47B2799712600A498AA /* BaseInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E47A2799712600A498AA /* BaseInterfaceController.swift */; };
+		25A7E47D27999EE400A498AA /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E47C27999EE400A498AA /* ConnectivityManager.swift */; };
+		25A7E4802799A1EE00A498AA /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E47C27999EE400A498AA /* ConnectivityManager.swift */; };
+		25A7E4A1279B5F0B00A498AA /* spinner6@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E489279B5F0B00A498AA /* spinner6@3x.png */; };
+		25A7E4A2279B5F0B00A498AA /* spinner4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E48A279B5F0B00A498AA /* spinner4@2x.png */; };
+		25A7E4A3279B5F0B00A498AA /* spinner8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E48B279B5F0B00A498AA /* spinner8@2x.png */; };
+		25A7E4A4279B5F0B00A498AA /* spinner8@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E48C279B5F0B00A498AA /* spinner8@3x.png */; };
+		25A7E4A5279B5F0B00A498AA /* spinner4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E48D279B5F0B00A498AA /* spinner4@3x.png */; };
+		25A7E4A6279B5F0B00A498AA /* spinner6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E48E279B5F0B00A498AA /* spinner6@2x.png */; };
+		25A7E4A7279B5F0B00A498AA /* spinner2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E48F279B5F0B00A498AA /* spinner2@2x.png */; };
+		25A7E4A8279B5F0B00A498AA /* spinner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E490279B5F0B00A498AA /* spinner1.png */; };
+		25A7E4A9279B5F0B00A498AA /* spinner2.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E491279B5F0B00A498AA /* spinner2.png */; };
+		25A7E4AA279B5F0B00A498AA /* spinner3.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E492279B5F0B00A498AA /* spinner3.png */; };
+		25A7E4AB279B5F0B00A498AA /* spinner7.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E493279B5F0B00A498AA /* spinner7.png */; };
+		25A7E4AC279B5F0B00A498AA /* spinner6.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E494279B5F0B00A498AA /* spinner6.png */; };
+		25A7E4AD279B5F0B00A498AA /* spinner4.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E495279B5F0B00A498AA /* spinner4.png */; };
+		25A7E4AE279B5F0B00A498AA /* spinner5.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E496279B5F0B00A498AA /* spinner5.png */; };
+		25A7E4AF279B5F0B00A498AA /* spinner2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E497279B5F0B00A498AA /* spinner2@3x.png */; };
+		25A7E4B0279B5F0B00A498AA /* spinner5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E498279B5F0B00A498AA /* spinner5@2x.png */; };
+		25A7E4B1279B5F0B00A498AA /* spinner8.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E499279B5F0B00A498AA /* spinner8.png */; };
+		25A7E4B2279B5F0B00A498AA /* spinner7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E49A279B5F0B00A498AA /* spinner7@3x.png */; };
+		25A7E4B3279B5F0B00A498AA /* spinner7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E49B279B5F0B00A498AA /* spinner7@2x.png */; };
+		25A7E4B4279B5F0B00A498AA /* spinner5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E49C279B5F0B00A498AA /* spinner5@3x.png */; };
+		25A7E4B5279B5F0B00A498AA /* spinner1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E49D279B5F0B00A498AA /* spinner1@3x.png */; };
+		25A7E4B6279B5F0B00A498AA /* spinner3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E49E279B5F0B00A498AA /* spinner3@2x.png */; };
+		25A7E4B7279B5F0B00A498AA /* spinner3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E49F279B5F0B00A498AA /* spinner3@3x.png */; };
+		25A7E4B8279B5F0B00A498AA /* spinner1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25A7E4A0279B5F0B00A498AA /* spinner1@2x.png */; };
+		25A7E4BA279B6E8A00A498AA /* SettingsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E4B9279B6E8A00A498AA /* SettingsInterfaceController.swift */; };
+		25A7E4BD279B77C500A498AA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A7E4BC279B77C500A498AA /* HealthKit.framework */; };
+		25C34E5227ADE2DA005FD9AA /* FilesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C34E5127ADE2DA005FD9AA /* FilesListTableViewCell.swift */; };
+		25C34E5527AE8B5A005FD9AA /* ExportFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C34E5427AE8B5A005FD9AA /* ExportFileViewController.swift */; };
+		25C34E5727AE8B68005FD9AA /* ExportFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C34E5627AE8B68005FD9AA /* ExportFileViewModel.swift */; };
+		25C34E5927AEB777005FD9AA /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C34E5827AEB777005FD9AA /* BaseTableViewController.swift */; };
+		25E5D0D527CAA4F80018197E /* FieldsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E5D0D427CAA4F80018197E /* FieldsMapper.swift */; };
+		40635C4DE7FB9C6AF832FC3F /* Pods_MotionTracking_WatchKit_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB44BEBC0E83F4248D083ED /* Pods_MotionTracking_WatchKit_AppTests.framework */; };
+		449821FB350AF137A2425721 /* Pods_MotionTracking_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F45632A2859C4A6FE353C /* Pods_MotionTracking_WatchKit_Extension.framework */; };
+		8C346B1114FE817384B2BE46 /* Pods_MotionTracking_WatchKit_App_MotionTracking_WatchKit_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA897270CC9E0E61AF4A0619 /* Pods_MotionTracking_WatchKit_App_MotionTracking_WatchKit_AppUITests.framework */; };
+		8DDDE58FE68B9C02F58715C0 /* Pods_MotionTracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35616EE0C1CC1F843D5A452D /* Pods_MotionTracking.framework */; };
+		CA669785AA94D726BD0FD89F /* Pods_MotionTracking_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5054161715E3374FCD8AA4C /* Pods_MotionTracking_WatchKit_App.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		25A7E41027985C5E00A498AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25A7E3F127985C5B00A498AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25A7E3F827985C5B00A498AA;
+			remoteInfo = MotionTracking;
+		};
+		25A7E41A27985C5E00A498AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25A7E3F127985C5B00A498AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25A7E3F827985C5B00A498AA;
+			remoteInfo = MotionTracking;
+		};
+		25A7E42527985C5E00A498AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25A7E3F127985C5B00A498AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25A7E42227985C5E00A498AA;
+			remoteInfo = "MotionTracking WatchKit App";
+		};
+		25A7E43327985C5F00A498AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25A7E3F127985C5B00A498AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25A7E43027985C5F00A498AA;
+			remoteInfo = "MotionTracking WatchKit Extension";
+		};
+		25A7E44727985C6100A498AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25A7E3F127985C5B00A498AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25A7E43027985C5F00A498AA;
+			remoteInfo = "MotionTracking WatchKit Extension";
+		};
+		25A7E45127985C6100A498AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25A7E3F127985C5B00A498AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25A7E42227985C5E00A498AA;
+			remoteInfo = "MotionTracking WatchKit App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		25A7E45D27985C6100A498AA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				25A7E43227985C5F00A498AA /* MotionTracking WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E46127985C6100A498AA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				25A7E42427985C5E00A498AA /* MotionTracking WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2502005927A812FD00952BBD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2502005E27A8135700952BBD /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		2502006027A8154300952BBD /* TrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = "<group>"; };
+		2502006227A8156B00952BBD /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		2502006527A8831E00952BBD /* InterfaceImage+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterfaceImage+Extention.swift"; sourceTree = "<group>"; };
+		2502006727A89BEE00952BBD /* WKInterfaceTimer+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKInterfaceTimer+Extention.swift"; sourceTree = "<group>"; };
+		2502006927A9781F00952BBD /* WKInterfaceLabel+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKInterfaceLabel+Extention.swift"; sourceTree = "<group>"; };
+		2502006B27A98ACE00952BBD /* ErrorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorApp.swift; sourceTree = "<group>"; };
+		2502006D27A9D0E400952BBD /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		2502006F27A9D24400952BBD /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		2502007127A9D26C00952BBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2502007327AA839E00952BBD /* WKInterfaceSlider+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKInterfaceSlider+Extention.swift"; sourceTree = "<group>"; };
+		2502007527AA91C800952BBD /* WKInterfacePicker+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKInterfacePicker+Extention.swift"; sourceTree = "<group>"; };
+		2502007727AA91E600952BBD /* WKInterfaceSwitch+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKInterfaceSwitch+Extention.swift"; sourceTree = "<group>"; };
+		2502007927AABBE300952BBD /* ReadyInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyInterfaceController.swift; sourceTree = "<group>"; };
+		2502007B27AAD7D900952BBD /* ReadyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewModel.swift; sourceTree = "<group>"; };
+		2502007D27AADF3500952BBD /* CurrentSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSession.swift; sourceTree = "<group>"; };
+		2502008027AAF10900952BBD /* FileTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTrackingManager.swift; sourceTree = "<group>"; };
+		2502008227AAF14800952BBD /* MotionTracking WatchKit ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MotionTracking WatchKit ExtensionRelease.entitlements"; sourceTree = "<group>"; };
+		251B96D127ABD07E00246CAB /* Date+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extention.swift"; sourceTree = "<group>"; };
+		251B96D527AC15F800246CAB /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		251B96D727AC161100246CAB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		251B96D927AC1C3C00246CAB /* FilesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesListViewModel.swift; sourceTree = "<group>"; };
+		254F123F27C6975900D7AD88 /* CSVFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVFileManager.swift; sourceTree = "<group>"; };
+		2563ACD4279B91FB00B1228F /* MotionTracking-WatchKit-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MotionTracking-WatchKit-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		25A7E3F927985C5B00A498AA /* MotionTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A7E3FC27985C5B00A498AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		25A7E3FE27985C5B00A498AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		25A7E40027985C5B00A498AA /* FilesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesListViewController.swift; sourceTree = "<group>"; };
+		25A7E40327985C5B00A498AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		25A7E40527985C5E00A498AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25A7E40827985C5E00A498AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		25A7E40A27985C5E00A498AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25A7E40F27985C5E00A498AA /* MotionTrackingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionTrackingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A7E41327985C5E00A498AA /* MotionTrackingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTrackingTests.swift; sourceTree = "<group>"; };
+		25A7E41927985C5E00A498AA /* MotionTrackingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionTrackingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A7E41D27985C5E00A498AA /* MotionTrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTrackingUITests.swift; sourceTree = "<group>"; };
+		25A7E41F27985C5E00A498AA /* MotionTrackingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTrackingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		25A7E42327985C5E00A498AA /* MotionTracking WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MotionTracking WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A7E42927985C5E00A498AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		25A7E42B27985C5F00A498AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25A7E43127985C5F00A498AA /* MotionTracking WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MotionTracking WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A7E43627985C5F00A498AA /* HomeInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInterfaceController.swift; sourceTree = "<group>"; };
+		25A7E43827985C5F00A498AA /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		25A7E43A27985C5F00A498AA /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		25A7E43C27985C5F00A498AA /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		25A7E43E27985C6100A498AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25A7E44027985C6100A498AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25A7E44127985C6100A498AA /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		25A7E44627985C6100A498AA /* MotionTracking WatchKit AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MotionTracking WatchKit AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A7E44A27985C6100A498AA /* MotionTracking_WatchKit_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTracking_WatchKit_AppTests.swift; sourceTree = "<group>"; };
+		25A7E45027985C6100A498AA /* MotionTracking WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MotionTracking WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A7E45427985C6100A498AA /* MotionTracking_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTracking_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
+		25A7E45627985C6100A498AA /* MotionTracking_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTracking_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		25A7E47127986BCC00A498AA /* TrackingInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingInterfaceController.swift; sourceTree = "<group>"; };
+		25A7E47427987DCA00A498AA /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		25A7E478279955A800A498AA /* ResultInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultInterfaceController.swift; sourceTree = "<group>"; };
+		25A7E47A2799712600A498AA /* BaseInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterfaceController.swift; sourceTree = "<group>"; };
+		25A7E47C27999EE400A498AA /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
+		25A7E489279B5F0B00A498AA /* spinner6@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner6@3x.png"; sourceTree = "<group>"; };
+		25A7E48A279B5F0B00A498AA /* spinner4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner4@2x.png"; sourceTree = "<group>"; };
+		25A7E48B279B5F0B00A498AA /* spinner8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner8@2x.png"; sourceTree = "<group>"; };
+		25A7E48C279B5F0B00A498AA /* spinner8@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner8@3x.png"; sourceTree = "<group>"; };
+		25A7E48D279B5F0B00A498AA /* spinner4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner4@3x.png"; sourceTree = "<group>"; };
+		25A7E48E279B5F0B00A498AA /* spinner6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner6@2x.png"; sourceTree = "<group>"; };
+		25A7E48F279B5F0B00A498AA /* spinner2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner2@2x.png"; sourceTree = "<group>"; };
+		25A7E490279B5F0B00A498AA /* spinner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner1.png; sourceTree = "<group>"; };
+		25A7E491279B5F0B00A498AA /* spinner2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner2.png; sourceTree = "<group>"; };
+		25A7E492279B5F0B00A498AA /* spinner3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner3.png; sourceTree = "<group>"; };
+		25A7E493279B5F0B00A498AA /* spinner7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner7.png; sourceTree = "<group>"; };
+		25A7E494279B5F0B00A498AA /* spinner6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner6.png; sourceTree = "<group>"; };
+		25A7E495279B5F0B00A498AA /* spinner4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner4.png; sourceTree = "<group>"; };
+		25A7E496279B5F0B00A498AA /* spinner5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner5.png; sourceTree = "<group>"; };
+		25A7E497279B5F0B00A498AA /* spinner2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner2@3x.png"; sourceTree = "<group>"; };
+		25A7E498279B5F0B00A498AA /* spinner5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner5@2x.png"; sourceTree = "<group>"; };
+		25A7E499279B5F0B00A498AA /* spinner8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner8.png; sourceTree = "<group>"; };
+		25A7E49A279B5F0B00A498AA /* spinner7@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner7@3x.png"; sourceTree = "<group>"; };
+		25A7E49B279B5F0B00A498AA /* spinner7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner7@2x.png"; sourceTree = "<group>"; };
+		25A7E49C279B5F0B00A498AA /* spinner5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner5@3x.png"; sourceTree = "<group>"; };
+		25A7E49D279B5F0B00A498AA /* spinner1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner1@3x.png"; sourceTree = "<group>"; };
+		25A7E49E279B5F0B00A498AA /* spinner3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner3@2x.png"; sourceTree = "<group>"; };
+		25A7E49F279B5F0B00A498AA /* spinner3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner3@3x.png"; sourceTree = "<group>"; };
+		25A7E4A0279B5F0B00A498AA /* spinner1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner1@2x.png"; sourceTree = "<group>"; };
+		25A7E4B9279B6E8A00A498AA /* SettingsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInterfaceController.swift; sourceTree = "<group>"; };
+		25A7E4BB279B77C400A498AA /* MotionTracking WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MotionTracking WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		25A7E4BC279B77C500A498AA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		25C34E5127ADE2DA005FD9AA /* FilesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesListTableViewCell.swift; sourceTree = "<group>"; };
+		25C34E5427AE8B5A005FD9AA /* ExportFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFileViewController.swift; sourceTree = "<group>"; };
+		25C34E5627AE8B68005FD9AA /* ExportFileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFileViewModel.swift; sourceTree = "<group>"; };
+		25C34E5827AEB777005FD9AA /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		25E5D0D427CAA4F80018197E /* FieldsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsMapper.swift; sourceTree = "<group>"; };
+		28B2B0775BB36D2FED19ABE0 /* Pods-MotionTracking WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit Extension/Pods-MotionTracking WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		2D89BE13EB63FCE69042F41F /* Pods-MotionTracking WatchKit AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit AppTests.release.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit AppTests/Pods-MotionTracking WatchKit AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		35616EE0C1CC1F843D5A452D /* Pods_MotionTracking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotionTracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		380D02197F64F029CAD3E5A8 /* Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.release.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests/Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3CD73D170D45F3A293E8CAC2 /* Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests/Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3F902AE2E2D09943C4647EC5 /* Pods-MotionTracking-MotionTrackingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking-MotionTrackingUITests.release.xcconfig"; path = "Target Support Files/Pods-MotionTracking-MotionTrackingUITests/Pods-MotionTracking-MotionTrackingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4133AEC1650EA5803D2A65D5 /* Pods-MotionTrackingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTrackingTests.debug.xcconfig"; path = "Target Support Files/Pods-MotionTrackingTests/Pods-MotionTrackingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4EB44BEBC0E83F4248D083ED /* Pods_MotionTracking_WatchKit_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotionTracking_WatchKit_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E7E37E47543147E761CB9FC /* Pods-MotionTracking-MotionTrackingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking-MotionTrackingUITests.debug.xcconfig"; path = "Target Support Files/Pods-MotionTracking-MotionTrackingUITests/Pods-MotionTracking-MotionTrackingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		61B80366346392EB6A939479 /* Pods-MotionTracking WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit App/Pods-MotionTracking WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		65A530ACFF8762CA2071A532 /* Pods-MotionTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking.release.xcconfig"; path = "Target Support Files/Pods-MotionTracking/Pods-MotionTracking.release.xcconfig"; sourceTree = "<group>"; };
+		669F99A23880CE6144BCDA5D /* Pods-MotionTracking WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit App/Pods-MotionTracking WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		73BF5D3B680B2C3F6B7C0813 /* Pods_MotionTracking_MotionTrackingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotionTracking_MotionTrackingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7F45632A2859C4A6FE353C /* Pods_MotionTracking_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotionTracking_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2868BAAB1123A3AF9F3ABB /* Pods-MotionTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking.debug.xcconfig"; path = "Target Support Files/Pods-MotionTracking/Pods-MotionTracking.debug.xcconfig"; sourceTree = "<group>"; };
+		9FF28FA433510C41E3B4A6D4 /* Pods-MotionTrackingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTrackingTests.release.xcconfig"; path = "Target Support Files/Pods-MotionTrackingTests/Pods-MotionTrackingTests.release.xcconfig"; sourceTree = "<group>"; };
+		AA897270CC9E0E61AF4A0619 /* Pods_MotionTracking_WatchKit_App_MotionTracking_WatchKit_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotionTracking_WatchKit_App_MotionTracking_WatchKit_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1086AC8FDC6F50436F06D57 /* Pods-MotionTracking WatchKit AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit AppTests.debug.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit AppTests/Pods-MotionTracking WatchKit AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5054161715E3374FCD8AA4C /* Pods_MotionTracking_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotionTracking_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDFB2D1E3E61D2A0EC0C4B8D /* Pods-MotionTracking WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit Extension/Pods-MotionTracking WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		E7F769B037DE57564528091A /* Pods_MotionTrackingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotionTrackingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23035408E671814E7AD7CF0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA669785AA94D726BD0FD89F /* Pods_MotionTracking_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E3F627985C5B00A498AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DDDE58FE68B9C02F58715C0 /* Pods_MotionTracking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E40C27985C5E00A498AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C90E19F1765353CCEEA3F5B /* Pods_MotionTrackingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E41627985C5E00A498AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0503E5217E0F0C04D9022169 /* Pods_MotionTracking_MotionTrackingUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E42E27985C5F00A498AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				449821FB350AF137A2425721 /* Pods_MotionTracking_WatchKit_Extension.framework in Frameworks */,
+				25A7E4BD279B77C500A498AA /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E44327985C6100A498AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40635C4DE7FB9C6AF832FC3F /* Pods_MotionTracking_WatchKit_AppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E44D27985C6100A498AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C346B1114FE817384B2BE46 /* Pods_MotionTracking_WatchKit_App_MotionTracking_WatchKit_AppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2502005627A7E4EF00952BBD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E43627985C5F00A498AA /* HomeInterfaceController.swift */,
+				2502005927A812FD00952BBD /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2502005727A7E51700952BBD /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				2502007927AABBE300952BBD /* ReadyInterfaceController.swift */,
+				2502007B27AAD7D900952BBD /* ReadyViewModel.swift */,
+				25A7E47127986BCC00A498AA /* TrackingInterfaceController.swift */,
+				2502006027A8154300952BBD /* TrackingViewModel.swift */,
+				25A7E478279955A800A498AA /* ResultInterfaceController.swift */,
+				2502006227A8156B00952BBD /* ResultViewModel.swift */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
+		2502005827A7E53400952BBD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E4B9279B6E8A00A498AA /* SettingsInterfaceController.swift */,
+				2502006D27A9D0E400952BBD /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2502005B27A8131100952BBD /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E47427987DCA00A498AA /* MotionManager.swift */,
+				25A7E47C27999EE400A498AA /* ConnectivityManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2502005C27A8132700952BBD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E47A2799712600A498AA /* BaseInterfaceController.swift */,
+				2502005E27A8135700952BBD /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2502005D27A8133400952BBD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2502007127A9D26C00952BBD /* Constants.swift */,
+				2502006F27A9D24400952BBD /* Parameters.swift */,
+				2502006B27A98ACE00952BBD /* ErrorApp.swift */,
+				2502007D27AADF3500952BBD /* CurrentSession.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2502006427A8830100952BBD /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				2502006527A8831E00952BBD /* InterfaceImage+Extention.swift */,
+				2502006727A89BEE00952BBD /* WKInterfaceTimer+Extention.swift */,
+				2502006927A9781F00952BBD /* WKInterfaceLabel+Extention.swift */,
+				2502007327AA839E00952BBD /* WKInterfaceSlider+Extention.swift */,
+				2502007527AA91C800952BBD /* WKInterfacePicker+Extention.swift */,
+				2502007727AA91E600952BBD /* WKInterfaceSwitch+Extention.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		2502007F27AAF0E300952BBD /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2502008027AAF10900952BBD /* FileTrackingManager.swift */,
+				254F123F27C6975900D7AD88 /* CSVFileManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		251B96D027ABD06A00246CAB /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				251B96D127ABD07E00246CAB /* Date+Extention.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		251B96D427ABE6D200246CAB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				251B96D727AC161100246CAB /* BaseViewController.swift */,
+				25C34E5827AEB777005FD9AA /* BaseTableViewController.swift */,
+				251B96D527AC15F800246CAB /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		25A7E3F027985C5B00A498AA = {
+			isa = PBXGroup;
+			children = (
+				25A7E3FB27985C5B00A498AA /* MotionTracking */,
+				25A7E41227985C5E00A498AA /* MotionTrackingTests */,
+				25A7E41C27985C5E00A498AA /* MotionTrackingUITests */,
+				25A7E42727985C5E00A498AA /* MotionTracking WatchKit App */,
+				25A7E43527985C5F00A498AA /* MotionTracking WatchKit Extension */,
+				25A7E44927985C6100A498AA /* MotionTracking WatchKit AppTests */,
+				25A7E45327985C6100A498AA /* MotionTracking WatchKit AppUITests */,
+				25A7E3FA27985C5B00A498AA /* Products */,
+				25A7E4812799A74600A498AA /* Frameworks */,
+				8BC55662B0EB791890B994E0 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		25A7E3FA27985C5B00A498AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E3F927985C5B00A498AA /* MotionTracking.app */,
+				25A7E40F27985C5E00A498AA /* MotionTrackingTests.xctest */,
+				25A7E41927985C5E00A498AA /* MotionTrackingUITests.xctest */,
+				25A7E42327985C5E00A498AA /* MotionTracking WatchKit App.app */,
+				25A7E43127985C5F00A498AA /* MotionTracking WatchKit Extension.appex */,
+				25A7E44627985C6100A498AA /* MotionTracking WatchKit AppTests.xctest */,
+				25A7E45027985C6100A498AA /* MotionTracking WatchKit AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25A7E3FB27985C5B00A498AA /* MotionTracking */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E4862799C22B00A498AA /* Common */,
+				25C34E4F27ADE2B1005FD9AA /* FilesList */,
+				25C34E5327AE8B3D005FD9AA /* ExportFile */,
+				25A7E3FC27985C5B00A498AA /* AppDelegate.swift */,
+				25A7E3FE27985C5B00A498AA /* SceneDelegate.swift */,
+				25A7E40227985C5B00A498AA /* Main.storyboard */,
+				25A7E40527985C5E00A498AA /* Assets.xcassets */,
+				25A7E40727985C5E00A498AA /* LaunchScreen.storyboard */,
+				25A7E40A27985C5E00A498AA /* Info.plist */,
+			);
+			path = MotionTracking;
+			sourceTree = "<group>";
+		};
+		25A7E41227985C5E00A498AA /* MotionTrackingTests */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E41327985C5E00A498AA /* MotionTrackingTests.swift */,
+			);
+			path = MotionTrackingTests;
+			sourceTree = "<group>";
+		};
+		25A7E41C27985C5E00A498AA /* MotionTrackingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E41D27985C5E00A498AA /* MotionTrackingUITests.swift */,
+				25A7E41F27985C5E00A498AA /* MotionTrackingUITestsLaunchTests.swift */,
+			);
+			path = MotionTrackingUITests;
+			sourceTree = "<group>";
+		};
+		25A7E42727985C5E00A498AA /* MotionTracking WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				2563ACD4279B91FB00B1228F /* MotionTracking-WatchKit-App-Info.plist */,
+				25A7E42827985C5E00A498AA /* Interface.storyboard */,
+				25A7E42B27985C5F00A498AA /* Assets.xcassets */,
+			);
+			path = "MotionTracking WatchKit App";
+			sourceTree = "<group>";
+		};
+		25A7E43527985C5F00A498AA /* MotionTracking WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2502008227AAF14800952BBD /* MotionTracking WatchKit ExtensionRelease.entitlements */,
+				25A7E4BB279B77C400A498AA /* MotionTracking WatchKit Extension.entitlements */,
+				25A7E47327987DA400A498AA /* Common */,
+				2502005627A7E4EF00952BBD /* Home */,
+				2502005727A7E51700952BBD /* Tracking */,
+				2502005827A7E53400952BBD /* Settings */,
+				25A7E43827985C5F00A498AA /* ExtensionDelegate.swift */,
+				25A7E43A27985C5F00A498AA /* NotificationController.swift */,
+				25A7E43C27985C5F00A498AA /* ComplicationController.swift */,
+				25A7E43E27985C6100A498AA /* Assets.xcassets */,
+				25A7E44027985C6100A498AA /* Info.plist */,
+				25A7E44127985C6100A498AA /* PushNotificationPayload.apns */,
+				25A7E487279B5EE400A498AA /* Ressources */,
+			);
+			path = "MotionTracking WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		25A7E44927985C6100A498AA /* MotionTracking WatchKit AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E44A27985C6100A498AA /* MotionTracking_WatchKit_AppTests.swift */,
+			);
+			path = "MotionTracking WatchKit AppTests";
+			sourceTree = "<group>";
+		};
+		25A7E45327985C6100A498AA /* MotionTracking WatchKit AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E45427985C6100A498AA /* MotionTracking_WatchKit_AppUITests.swift */,
+				25A7E45627985C6100A498AA /* MotionTracking_WatchKit_AppUITestsLaunchTests.swift */,
+			);
+			path = "MotionTracking WatchKit AppUITests";
+			sourceTree = "<group>";
+		};
+		25A7E47327987DA400A498AA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2502006427A8830100952BBD /* Extention */,
+				2502005B27A8131100952BBD /* Manager */,
+				2502005C27A8132700952BBD /* Base */,
+				2502005D27A8133400952BBD /* Utils */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		25A7E4812799A74600A498AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E4BC279B77C500A498AA /* HealthKit.framework */,
+				35616EE0C1CC1F843D5A452D /* Pods_MotionTracking.framework */,
+				C5054161715E3374FCD8AA4C /* Pods_MotionTracking_WatchKit_App.framework */,
+				AA897270CC9E0E61AF4A0619 /* Pods_MotionTracking_WatchKit_App_MotionTracking_WatchKit_AppUITests.framework */,
+				4EB44BEBC0E83F4248D083ED /* Pods_MotionTracking_WatchKit_AppTests.framework */,
+				9D7F45632A2859C4A6FE353C /* Pods_MotionTracking_WatchKit_Extension.framework */,
+				73BF5D3B680B2C3F6B7C0813 /* Pods_MotionTracking_MotionTrackingUITests.framework */,
+				E7F769B037DE57564528091A /* Pods_MotionTrackingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25A7E4862799C22B00A498AA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				251B96D027ABD06A00246CAB /* Extention */,
+				2502007F27AAF0E300952BBD /* Manager */,
+				251B96D427ABE6D200246CAB /* Base */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		25A7E487279B5EE400A498AA /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E488279B5F0B00A498AA /* spinner */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		25A7E488279B5F0B00A498AA /* spinner */ = {
+			isa = PBXGroup;
+			children = (
+				25A7E489279B5F0B00A498AA /* spinner6@3x.png */,
+				25A7E48A279B5F0B00A498AA /* spinner4@2x.png */,
+				25A7E48B279B5F0B00A498AA /* spinner8@2x.png */,
+				25A7E48C279B5F0B00A498AA /* spinner8@3x.png */,
+				25A7E48D279B5F0B00A498AA /* spinner4@3x.png */,
+				25A7E48E279B5F0B00A498AA /* spinner6@2x.png */,
+				25A7E48F279B5F0B00A498AA /* spinner2@2x.png */,
+				25A7E490279B5F0B00A498AA /* spinner1.png */,
+				25A7E491279B5F0B00A498AA /* spinner2.png */,
+				25A7E492279B5F0B00A498AA /* spinner3.png */,
+				25A7E493279B5F0B00A498AA /* spinner7.png */,
+				25A7E494279B5F0B00A498AA /* spinner6.png */,
+				25A7E495279B5F0B00A498AA /* spinner4.png */,
+				25A7E496279B5F0B00A498AA /* spinner5.png */,
+				25A7E497279B5F0B00A498AA /* spinner2@3x.png */,
+				25A7E498279B5F0B00A498AA /* spinner5@2x.png */,
+				25A7E499279B5F0B00A498AA /* spinner8.png */,
+				25A7E49A279B5F0B00A498AA /* spinner7@3x.png */,
+				25A7E49B279B5F0B00A498AA /* spinner7@2x.png */,
+				25A7E49C279B5F0B00A498AA /* spinner5@3x.png */,
+				25A7E49D279B5F0B00A498AA /* spinner1@3x.png */,
+				25A7E49E279B5F0B00A498AA /* spinner3@2x.png */,
+				25A7E49F279B5F0B00A498AA /* spinner3@3x.png */,
+				25A7E4A0279B5F0B00A498AA /* spinner1@2x.png */,
+			);
+			path = spinner;
+			sourceTree = "<group>";
+		};
+		25C34E4F27ADE2B1005FD9AA /* FilesList */ = {
+			isa = PBXGroup;
+			children = (
+				25C34E5027ADE2CA005FD9AA /* View */,
+				25A7E40027985C5B00A498AA /* FilesListViewController.swift */,
+				251B96D927AC1C3C00246CAB /* FilesListViewModel.swift */,
+			);
+			path = FilesList;
+			sourceTree = "<group>";
+		};
+		25C34E5027ADE2CA005FD9AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25C34E5127ADE2DA005FD9AA /* FilesListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		25C34E5327AE8B3D005FD9AA /* ExportFile */ = {
+			isa = PBXGroup;
+			children = (
+				25E5D0D327CAA4E60018197E /* Data */,
+				25C34E5427AE8B5A005FD9AA /* ExportFileViewController.swift */,
+				25C34E5627AE8B68005FD9AA /* ExportFileViewModel.swift */,
+			);
+			path = ExportFile;
+			sourceTree = "<group>";
+		};
+		25E5D0D327CAA4E60018197E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				25E5D0D427CAA4F80018197E /* FieldsMapper.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8BC55662B0EB791890B994E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F2868BAAB1123A3AF9F3ABB /* Pods-MotionTracking.debug.xcconfig */,
+				65A530ACFF8762CA2071A532 /* Pods-MotionTracking.release.xcconfig */,
+				669F99A23880CE6144BCDA5D /* Pods-MotionTracking WatchKit App.debug.xcconfig */,
+				61B80366346392EB6A939479 /* Pods-MotionTracking WatchKit App.release.xcconfig */,
+				3CD73D170D45F3A293E8CAC2 /* Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.debug.xcconfig */,
+				380D02197F64F029CAD3E5A8 /* Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.release.xcconfig */,
+				C1086AC8FDC6F50436F06D57 /* Pods-MotionTracking WatchKit AppTests.debug.xcconfig */,
+				2D89BE13EB63FCE69042F41F /* Pods-MotionTracking WatchKit AppTests.release.xcconfig */,
+				28B2B0775BB36D2FED19ABE0 /* Pods-MotionTracking WatchKit Extension.debug.xcconfig */,
+				CDFB2D1E3E61D2A0EC0C4B8D /* Pods-MotionTracking WatchKit Extension.release.xcconfig */,
+				5E7E37E47543147E761CB9FC /* Pods-MotionTracking-MotionTrackingUITests.debug.xcconfig */,
+				3F902AE2E2D09943C4647EC5 /* Pods-MotionTracking-MotionTrackingUITests.release.xcconfig */,
+				4133AEC1650EA5803D2A65D5 /* Pods-MotionTrackingTests.debug.xcconfig */,
+				9FF28FA433510C41E3B4A6D4 /* Pods-MotionTrackingTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25A7E3F827985C5B00A498AA /* MotionTracking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A7E46227985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking" */;
+			buildPhases = (
+				44D877BB9344299E80E8734B /* [CP] Check Pods Manifest.lock */,
+				25A7E3F527985C5B00A498AA /* Sources */,
+				25A7E3F627985C5B00A498AA /* Frameworks */,
+				25A7E3F727985C5B00A498AA /* Resources */,
+				25A7E46127985C6100A498AA /* Embed Watch Content */,
+				830F5F4EE3A0465257209511 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25A7E42627985C5E00A498AA /* PBXTargetDependency */,
+			);
+			name = MotionTracking;
+			productName = MotionTracking;
+			productReference = 25A7E3F927985C5B00A498AA /* MotionTracking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		25A7E40E27985C5E00A498AA /* MotionTrackingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A7E46527985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTrackingTests" */;
+			buildPhases = (
+				FD16870E994C7CE25955D6D0 /* [CP] Check Pods Manifest.lock */,
+				25A7E40B27985C5E00A498AA /* Sources */,
+				25A7E40C27985C5E00A498AA /* Frameworks */,
+				25A7E40D27985C5E00A498AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25A7E41127985C5E00A498AA /* PBXTargetDependency */,
+			);
+			name = MotionTrackingTests;
+			productName = MotionTrackingTests;
+			productReference = 25A7E40F27985C5E00A498AA /* MotionTrackingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		25A7E41827985C5E00A498AA /* MotionTrackingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A7E46827985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTrackingUITests" */;
+			buildPhases = (
+				81D01DCF6284892D33C94A4D /* [CP] Check Pods Manifest.lock */,
+				25A7E41527985C5E00A498AA /* Sources */,
+				25A7E41627985C5E00A498AA /* Frameworks */,
+				25A7E41727985C5E00A498AA /* Resources */,
+				9A1B0798A4DFC6265AD4BE47 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25A7E41B27985C5E00A498AA /* PBXTargetDependency */,
+			);
+			name = MotionTrackingUITests;
+			productName = MotionTrackingUITests;
+			productReference = 25A7E41927985C5E00A498AA /* MotionTrackingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		25A7E42227985C5E00A498AA /* MotionTracking WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A7E45E27985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking WatchKit App" */;
+			buildPhases = (
+				BC57B998AABD46685479164B /* [CP] Check Pods Manifest.lock */,
+				25A7E42127985C5E00A498AA /* Resources */,
+				25A7E45D27985C6100A498AA /* Embed App Extensions */,
+				23035408E671814E7AD7CF0D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25A7E43427985C5F00A498AA /* PBXTargetDependency */,
+			);
+			name = "MotionTracking WatchKit App";
+			productName = "MotionTracking WatchKit App";
+			productReference = 25A7E42327985C5E00A498AA /* MotionTracking WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		25A7E43027985C5F00A498AA /* MotionTracking WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A7E45A27985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking WatchKit Extension" */;
+			buildPhases = (
+				C6DBFEBDCE55D0A1B946C81A /* [CP] Check Pods Manifest.lock */,
+				25A7E42D27985C5F00A498AA /* Sources */,
+				25A7E42E27985C5F00A498AA /* Frameworks */,
+				25A7E42F27985C5F00A498AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MotionTracking WatchKit Extension";
+			productName = "MotionTracking WatchKit Extension";
+			productReference = 25A7E43127985C5F00A498AA /* MotionTracking WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		25A7E44527985C6100A498AA /* MotionTracking WatchKit AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A7E46B27985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking WatchKit AppTests" */;
+			buildPhases = (
+				B6F31DBE4F9D99B1A9CA5C09 /* [CP] Check Pods Manifest.lock */,
+				25A7E44227985C6100A498AA /* Sources */,
+				25A7E44327985C6100A498AA /* Frameworks */,
+				25A7E44427985C6100A498AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25A7E44827985C6100A498AA /* PBXTargetDependency */,
+			);
+			name = "MotionTracking WatchKit AppTests";
+			productName = "MotionTracking WatchKit AppTests";
+			productReference = 25A7E44627985C6100A498AA /* MotionTracking WatchKit AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		25A7E44F27985C6100A498AA /* MotionTracking WatchKit AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25A7E46E27985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking WatchKit AppUITests" */;
+			buildPhases = (
+				BDCE6C4DF916C169C33FD9D2 /* [CP] Check Pods Manifest.lock */,
+				25A7E44C27985C6100A498AA /* Sources */,
+				25A7E44D27985C6100A498AA /* Frameworks */,
+				25A7E44E27985C6100A498AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25A7E45227985C6100A498AA /* PBXTargetDependency */,
+			);
+			name = "MotionTracking WatchKit AppUITests";
+			productName = "MotionTracking WatchKit AppUITests";
+			productReference = 25A7E45027985C6100A498AA /* MotionTracking WatchKit AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25A7E3F127985C5B00A498AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					25A7E3F827985C5B00A498AA = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					25A7E40E27985C5E00A498AA = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = 25A7E3F827985C5B00A498AA;
+					};
+					25A7E41827985C5E00A498AA = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = 25A7E3F827985C5B00A498AA;
+					};
+					25A7E42227985C5E00A498AA = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					25A7E43027985C5F00A498AA = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					25A7E44527985C6100A498AA = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = 25A7E43027985C5F00A498AA;
+					};
+					25A7E44F27985C6100A498AA = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = 25A7E42227985C5E00A498AA;
+					};
+				};
+			};
+			buildConfigurationList = 25A7E3F427985C5B00A498AA /* Build configuration list for PBXProject "MotionTracking" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 25A7E3F027985C5B00A498AA;
+			productRefGroup = 25A7E3FA27985C5B00A498AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25A7E3F827985C5B00A498AA /* MotionTracking */,
+				25A7E40E27985C5E00A498AA /* MotionTrackingTests */,
+				25A7E41827985C5E00A498AA /* MotionTrackingUITests */,
+				25A7E42227985C5E00A498AA /* MotionTracking WatchKit App */,
+				25A7E43027985C5F00A498AA /* MotionTracking WatchKit Extension */,
+				25A7E44527985C6100A498AA /* MotionTracking WatchKit AppTests */,
+				25A7E44F27985C6100A498AA /* MotionTracking WatchKit AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25A7E3F727985C5B00A498AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A7E40927985C5E00A498AA /* LaunchScreen.storyboard in Resources */,
+				25A7E40627985C5E00A498AA /* Assets.xcassets in Resources */,
+				25A7E40427985C5B00A498AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E40D27985C5E00A498AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E41727985C5E00A498AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E42127985C5E00A498AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A7E42C27985C5F00A498AA /* Assets.xcassets in Resources */,
+				25A7E42A27985C5E00A498AA /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E42F27985C5F00A498AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A7E4A1279B5F0B00A498AA /* spinner6@3x.png in Resources */,
+				25A7E43F27985C6100A498AA /* Assets.xcassets in Resources */,
+				25A7E4B3279B5F0B00A498AA /* spinner7@2x.png in Resources */,
+				25A7E4AC279B5F0B00A498AA /* spinner6.png in Resources */,
+				25A7E4B8279B5F0B00A498AA /* spinner1@2x.png in Resources */,
+				25A7E4AA279B5F0B00A498AA /* spinner3.png in Resources */,
+				25A7E4AD279B5F0B00A498AA /* spinner4.png in Resources */,
+				25A7E4B6279B5F0B00A498AA /* spinner3@2x.png in Resources */,
+				25A7E4B7279B5F0B00A498AA /* spinner3@3x.png in Resources */,
+				25A7E4A9279B5F0B00A498AA /* spinner2.png in Resources */,
+				25A7E4A5279B5F0B00A498AA /* spinner4@3x.png in Resources */,
+				25A7E4A8279B5F0B00A498AA /* spinner1.png in Resources */,
+				25A7E4B4279B5F0B00A498AA /* spinner5@3x.png in Resources */,
+				25A7E4A6279B5F0B00A498AA /* spinner6@2x.png in Resources */,
+				25A7E4A2279B5F0B00A498AA /* spinner4@2x.png in Resources */,
+				25A7E4A7279B5F0B00A498AA /* spinner2@2x.png in Resources */,
+				25A7E4B5279B5F0B00A498AA /* spinner1@3x.png in Resources */,
+				25A7E4AB279B5F0B00A498AA /* spinner7.png in Resources */,
+				25A7E4B1279B5F0B00A498AA /* spinner8.png in Resources */,
+				25A7E4AE279B5F0B00A498AA /* spinner5.png in Resources */,
+				25A7E4A4279B5F0B00A498AA /* spinner8@3x.png in Resources */,
+				25A7E4AF279B5F0B00A498AA /* spinner2@3x.png in Resources */,
+				25A7E4A3279B5F0B00A498AA /* spinner8@2x.png in Resources */,
+				25A7E4B2279B5F0B00A498AA /* spinner7@3x.png in Resources */,
+				25A7E4B0279B5F0B00A498AA /* spinner5@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E44427985C6100A498AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E44E27985C6100A498AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44D877BB9344299E80E8734B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MotionTracking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81D01DCF6284892D33C94A4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MotionTracking-MotionTrackingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		830F5F4EE3A0465257209511 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MotionTracking/Pods-MotionTracking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MotionTracking/Pods-MotionTracking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MotionTracking/Pods-MotionTracking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A1B0798A4DFC6265AD4BE47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MotionTracking-MotionTrackingUITests/Pods-MotionTracking-MotionTrackingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MotionTracking-MotionTrackingUITests/Pods-MotionTracking-MotionTrackingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MotionTracking-MotionTrackingUITests/Pods-MotionTracking-MotionTrackingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6F31DBE4F9D99B1A9CA5C09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MotionTracking WatchKit AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC57B998AABD46685479164B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MotionTracking WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDCE6C4DF916C169C33FD9D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6DBFEBDCE55D0A1B946C81A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MotionTracking WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD16870E994C7CE25955D6D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MotionTrackingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25A7E3F527985C5B00A498AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2502008127AAF10900952BBD /* FileTrackingManager.swift in Sources */,
+				25A7E40127985C5B00A498AA /* FilesListViewController.swift in Sources */,
+				25C34E5927AEB777005FD9AA /* BaseTableViewController.swift in Sources */,
+				25A7E3FD27985C5B00A498AA /* AppDelegate.swift in Sources */,
+				25C34E5227ADE2DA005FD9AA /* FilesListTableViewCell.swift in Sources */,
+				251B96DA27AC1C3C00246CAB /* FilesListViewModel.swift in Sources */,
+				254F124027C6975900D7AD88 /* CSVFileManager.swift in Sources */,
+				25C34E5527AE8B5A005FD9AA /* ExportFileViewController.swift in Sources */,
+				25C34E5727AE8B68005FD9AA /* ExportFileViewModel.swift in Sources */,
+				251B96D627AC15F800246CAB /* BaseViewModel.swift in Sources */,
+				25A7E4802799A1EE00A498AA /* ConnectivityManager.swift in Sources */,
+				251B96D827AC161100246CAB /* BaseViewController.swift in Sources */,
+				251B96D227ABD07E00246CAB /* Date+Extention.swift in Sources */,
+				25A7E3FF27985C5B00A498AA /* SceneDelegate.swift in Sources */,
+				25E5D0D527CAA4F80018197E /* FieldsMapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E40B27985C5E00A498AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A7E41427985C5E00A498AA /* MotionTrackingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E41527985C5E00A498AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A7E41E27985C5E00A498AA /* MotionTrackingUITests.swift in Sources */,
+				25A7E42027985C5E00A498AA /* MotionTrackingUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E42D27985C5F00A498AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2502006C27A98ACE00952BBD /* ErrorApp.swift in Sources */,
+				2502006827A89BEE00952BBD /* WKInterfaceTimer+Extention.swift in Sources */,
+				25A7E43B27985C5F00A498AA /* NotificationController.swift in Sources */,
+				25A7E47527987DCA00A498AA /* MotionManager.swift in Sources */,
+				25A7E4BA279B6E8A00A498AA /* SettingsInterfaceController.swift in Sources */,
+				251B96CF27ABC10A00246CAB /* FileTrackingManager.swift in Sources */,
+				2502005F27A8135700952BBD /* BaseViewModel.swift in Sources */,
+				2502007227A9D26C00952BBD /* Constants.swift in Sources */,
+				2502007E27AADF3500952BBD /* CurrentSession.swift in Sources */,
+				2502007627AA91C800952BBD /* WKInterfacePicker+Extention.swift in Sources */,
+				2502006127A8154300952BBD /* TrackingViewModel.swift in Sources */,
+				25A7E43D27985C5F00A498AA /* ComplicationController.swift in Sources */,
+				25A7E43927985C5F00A498AA /* ExtensionDelegate.swift in Sources */,
+				25A7E47227986BCC00A498AA /* TrackingInterfaceController.swift in Sources */,
+				2502006A27A9781F00952BBD /* WKInterfaceLabel+Extention.swift in Sources */,
+				2502007A27AABBE300952BBD /* ReadyInterfaceController.swift in Sources */,
+				2502005A27A812FD00952BBD /* HomeViewModel.swift in Sources */,
+				2502006327A8156B00952BBD /* ResultViewModel.swift in Sources */,
+				25A7E479279955A800A498AA /* ResultInterfaceController.swift in Sources */,
+				2502007427AA839E00952BBD /* WKInterfaceSlider+Extention.swift in Sources */,
+				2502007C27AAD7D900952BBD /* ReadyViewModel.swift in Sources */,
+				251B96D327ABE3B400246CAB /* Date+Extention.swift in Sources */,
+				25A7E47B2799712600A498AA /* BaseInterfaceController.swift in Sources */,
+				2502006627A8831E00952BBD /* InterfaceImage+Extention.swift in Sources */,
+				25A7E47D27999EE400A498AA /* ConnectivityManager.swift in Sources */,
+				2502007827AA91E600952BBD /* WKInterfaceSwitch+Extention.swift in Sources */,
+				25A7E43727985C5F00A498AA /* HomeInterfaceController.swift in Sources */,
+				2502006E27A9D0E400952BBD /* SettingsViewModel.swift in Sources */,
+				2502007027A9D24500952BBD /* Parameters.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E44227985C6100A498AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A7E44B27985C6100A498AA /* MotionTracking_WatchKit_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25A7E44C27985C6100A498AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25A7E45727985C6100A498AA /* MotionTracking_WatchKit_AppUITestsLaunchTests.swift in Sources */,
+				25A7E45527985C6100A498AA /* MotionTracking_WatchKit_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25A7E41127985C5E00A498AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25A7E3F827985C5B00A498AA /* MotionTracking */;
+			targetProxy = 25A7E41027985C5E00A498AA /* PBXContainerItemProxy */;
+		};
+		25A7E41B27985C5E00A498AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25A7E3F827985C5B00A498AA /* MotionTracking */;
+			targetProxy = 25A7E41A27985C5E00A498AA /* PBXContainerItemProxy */;
+		};
+		25A7E42627985C5E00A498AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25A7E42227985C5E00A498AA /* MotionTracking WatchKit App */;
+			targetProxy = 25A7E42527985C5E00A498AA /* PBXContainerItemProxy */;
+		};
+		25A7E43427985C5F00A498AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25A7E43027985C5F00A498AA /* MotionTracking WatchKit Extension */;
+			targetProxy = 25A7E43327985C5F00A498AA /* PBXContainerItemProxy */;
+		};
+		25A7E44827985C6100A498AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25A7E43027985C5F00A498AA /* MotionTracking WatchKit Extension */;
+			targetProxy = 25A7E44727985C6100A498AA /* PBXContainerItemProxy */;
+		};
+		25A7E45227985C6100A498AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25A7E42227985C5E00A498AA /* MotionTracking WatchKit App */;
+			targetProxy = 25A7E45127985C6100A498AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		25A7E40227985C5B00A498AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25A7E40327985C5B00A498AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		25A7E40727985C5E00A498AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25A7E40827985C5E00A498AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		25A7E42827985C5E00A498AA /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25A7E42927985C5E00A498AA /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25A7E45827985C6100A498AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		25A7E45927985C6100A498AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		25A7E45B27985C6100A498AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28B2B0775BB36D2FED19ABE0 /* Pods-MotionTracking WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
+				CODE_SIGN_ENTITLEMENTS = "MotionTracking WatchKit Extension/MotionTracking WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MotionTracking WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MotionTracking WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = MotionTracking_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "A des fin de core ML";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "MotionTracking use the location for start tracking in background.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "MotionTracking use the location for start tracking in background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "MotionTracking use the location for start tracking in background.";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = MotionTracking_WatchKit_Extension.ExtensionDelegate;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTracking.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		25A7E45C27985C6100A498AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDFB2D1E3E61D2A0EC0C4B8D /* Pods-MotionTracking WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES;
+				CODE_SIGN_ENTITLEMENTS = "MotionTracking WatchKit Extension/MotionTracking WatchKit ExtensionRelease.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MotionTracking WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MotionTracking WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = MotionTracking_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "A des fin de core ML";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "MotionTracking use the location for start tracking in background.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "MotionTracking use the location for start tracking in background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "MotionTracking use the location for start tracking in background.";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = MotionTracking_WatchKit_Extension.ExtensionDelegate;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTracking.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		25A7E45F27985C6100A498AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 669F99A23880CE6144BCDA5D /* Pods-MotionTracking WatchKit App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = MotionTracking_WatchKit_Extension;
+				INFOPLIST_FILE = "MotionTracking-WatchKit-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MotionTracking WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kangama.MotionTracking;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTracking.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		25A7E46027985C6100A498AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61B80366346392EB6A939479 /* Pods-MotionTracking WatchKit App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = MotionTracking_WatchKit_Extension;
+				INFOPLIST_FILE = "MotionTracking-WatchKit-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MotionTracking WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kangama.MotionTracking;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTracking.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		25A7E46327985C6100A498AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F2868BAAB1123A3AF9F3ABB /* Pods-MotionTracking.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MotionTracking/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTracking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		25A7E46427985C6100A498AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65A530ACFF8762CA2071A532 /* Pods-MotionTracking.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MotionTracking/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTracking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25A7E46627985C6100A498AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4133AEC1650EA5803D2A65D5 /* Pods-MotionTrackingTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTrackingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionTracking.app/MotionTracking";
+			};
+			name = Debug;
+		};
+		25A7E46727985C6100A498AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FF28FA433510C41E3B4A6D4 /* Pods-MotionTrackingTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTrackingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionTracking.app/MotionTracking";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25A7E46927985C6100A498AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E7E37E47543147E761CB9FC /* Pods-MotionTracking-MotionTrackingUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTrackingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MotionTracking;
+			};
+			name = Debug;
+		};
+		25A7E46A27985C6100A498AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F902AE2E2D09943C4647EC5 /* Pods-MotionTracking-MotionTrackingUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kangama.MotionTrackingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MotionTracking;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25A7E46C27985C6100A498AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1086AC8FDC6F50436F06D57 /* Pods-MotionTracking WatchKit AppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangama.MotionTracking-WatchKit-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionTracking WatchKit Extension.appex/MotionTracking WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		25A7E46D27985C6100A498AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D89BE13EB63FCE69042F41F /* Pods-MotionTracking WatchKit AppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangama.MotionTracking-WatchKit-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionTracking WatchKit Extension.appex/MotionTracking WatchKit Extension";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		25A7E46F27985C6100A498AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CD73D170D45F3A293E8CAC2 /* Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangama.MotionTracking-WatchKit-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "MotionTracking WatchKit App";
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		25A7E47027985C6100A498AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 380D02197F64F029CAD3E5A8 /* Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FEV8Q8DHKC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangama.MotionTracking-WatchKit-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "MotionTracking WatchKit App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25A7E3F427985C5B00A498AA /* Build configuration list for PBXProject "MotionTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A7E45827985C6100A498AA /* Debug */,
+				25A7E45927985C6100A498AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A7E45A27985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A7E45B27985C6100A498AA /* Debug */,
+				25A7E45C27985C6100A498AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A7E45E27985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A7E45F27985C6100A498AA /* Debug */,
+				25A7E46027985C6100A498AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A7E46227985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A7E46327985C6100A498AA /* Debug */,
+				25A7E46427985C6100A498AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A7E46527985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTrackingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A7E46627985C6100A498AA /* Debug */,
+				25A7E46727985C6100A498AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A7E46827985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTrackingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A7E46927985C6100A498AA /* Debug */,
+				25A7E46A27985C6100A498AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A7E46B27985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking WatchKit AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A7E46C27985C6100A498AA /* Debug */,
+				25A7E46D27985C6100A498AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25A7E46E27985C6100A498AA /* Build configuration list for PBXNativeTarget "MotionTracking WatchKit AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25A7E46F27985C6100A498AA /* Debug */,
+				25A7E47027985C6100A498AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25A7E3F127985C5B00A498AA /* Project object */;
+}

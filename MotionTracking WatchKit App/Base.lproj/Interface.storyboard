@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19514"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="aQp-SV-cLz">
+            <objects>
+                <controller identifier="SettingsInterfaceController" title="Settings" id="qka-4p-ukW" customClass="SettingsInterfaceController" customModule="MotionTracking_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="mzK-pK-I1l">
+                            <items>
+                                <label alignment="left" text="Herz" id="cew-gR-j9d">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <slider width="1" alignment="left" value="50" minimum="20" maximum="70" steps="5" id="zkI-xR-5Qn">
+                                    <connections>
+                                        <action selector="sliderAction:" destination="qka-4p-ukW" id="Egl-F7-ZUX"/>
+                                    </connections>
+                                </slider>
+                                <group width="1" alignment="left" verticalAlignment="center" spacing="0.0" id="ZOy-ol-c1O">
+                                    <items>
+                                        <label alignment="left" text="Sample rage: " id="p1q-XH-5bU">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                        <label alignment="left" text="50" id="AGt-C3-zqx">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                        <label alignment="left" text="Hz" id="KbJ-cX-gbb">
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" height="20" alignment="left" id="XPX-Qo-gUl" userLabel="Space Group"/>
+                        <group width="1" alignment="left" layout="vertical" id="rCa-gx-Tx8">
+                            <items>
+                                <label alignment="left" text="Timer" id="l2h-vQ-gOp">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <picker height="80" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="0WI-Jn-3eS">
+                                    <connections>
+                                        <action selector="pickerAction:" destination="qka-4p-ukW" id="7rN-94-4O8"/>
+                                    </connections>
+                                </picker>
+                                <label alignment="left" text="The maximum time in seconds you need to make your tracking." numberOfLines="0" id="1HC-po-ard">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" height="20" alignment="left" id="0ZL-0X-eqb" userLabel="Space Group"/>
+                        <group width="1" alignment="left" layout="vertical" id="kDj-20-Q6L">
+                            <items>
+                                <label alignment="left" text="Location" id="5E1-v7-Otx">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <switch width="1" alignment="left" value="YES" title="Do not recover" id="HNf-zo-lht">
+                                    <connections>
+                                        <action selector="switchAction:" destination="qka-4p-ukW" id="HE3-cW-6da"/>
+                                    </connections>
+                                </switch>
+                                <label alignment="left" text="If you disable location retrieval, it will not be added to the csv file." numberOfLines="0" id="BR2-xc-Hco">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="herzInterfaceLabel" destination="AGt-C3-zqx" id="06Q-9E-VF6"/>
+                        <outlet property="herzInterfaceSlider" destination="zkI-xR-5Qn" id="kxS-fJ-qoY"/>
+                        <outlet property="interfacePicker" destination="0WI-Jn-3eS" id="HI6-Yd-Sp9"/>
+                        <outlet property="locationInterfaceSwitch" destination="HNf-zo-lht" id="PGm-vE-k36"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="648" y="-393"/>
+        </scene>
+        <!--ReadyInterfaceController-->
+        <scene sceneID="Rmn-KA-DP1">
+            <objects>
+                <controller identifier="ReadyInterfaceController" fullScreen="YES" id="HsV-6l-FJ0" customClass="ReadyInterfaceController" customModule="MotionTracking_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Ready" textAlignment="center" id="Ewu-vL-gSh">
+                            <color key="textColor" name="AccentColor"/>
+                            <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                        </label>
+                        <label alignment="center" text="Go" textAlignment="center" id="bvq-B5-5Qf">
+                            <color key="textColor" name="AccentColor"/>
+                            <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="goLabel" destination="bvq-B5-5Qf" id="NQn-bO-KDN"/>
+                        <outlet property="readyLabel" destination="Ewu-vL-gSh" id="Kt0-MB-hcm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="284" y="-274"/>
+        </scene>
+        <!--Current session-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InterfaceController" title="Current session" fullBounds="YES" id="AgC-eL-Hgc" customClass="HomeInterfaceController" customModule="MotionTracking_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group height="0.59999999999999998" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="5DD-sF-byT">
+                            <items>
+                                <group width="1" alignment="left" verticalAlignment="center" id="XIF-GS-Ri9">
+                                    <items>
+                                        <imageView width="10" height="10" alignment="right" verticalAlignment="center" id="XXN-tT-yYb">
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                        <label alignment="left" text="File(s)" id="tQx-E5-yHD">
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="2" id="ROM-Cq-x0c">
+                                    <items>
+                                        <group alignment="left" verticalAlignment="center" spacing="2" id="KM6-og-llP">
+                                            <items>
+                                                <label alignment="left" text="10" id="iKM-lC-Yu3">
+                                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                                </label>
+                                                <label height="0.59999999999999998" alignment="left" verticalAlignment="bottom" text="Saved" id="JLX-eG-eUN">
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <separator alignment="left" verticalAlignment="center" id="70U-73-LJ2">
+                                            <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </separator>
+                                        <group alignment="left" verticalAlignment="center" id="LWl-qb-hnU">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="bottom" text="2" id="c7F-AM-FQc">
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                </label>
+                                                <label alignment="left" verticalAlignment="bottom" text="Error sending" id="MMd-zT-RhV">
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <button width="1" height="0.40000000000000002" alignment="center" verticalAlignment="bottom" title="Start tracking" id="2eK-qX-AP1">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                            <connections>
+                                <action selector="openTrackingInterface" destination="AgC-eL-Hgc" id="nRb-A5-GVJ"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="indicatorImage" destination="XXN-tT-yYb" id="3gO-mj-Urn"/>
+                        <outlet property="numberErrorLabel" destination="c7F-AM-FQc" id="aG5-PQ-79L"/>
+                        <outlet property="numberSavedLabel" destination="iKM-lC-Yu3" id="MMO-16-aUY"/>
+                        <segue destination="qka-4p-ukW" kind="relationship" relationship="nextPage" id="6KR-Wu-jip"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="311" y="102"/>
+        </scene>
+        <!--TrackingInterfaceController-->
+        <scene sceneID="whz-MP-2Te">
+            <objects>
+                <controller identifier="TrackingInterfaceController" id="rw3-6r-soZ" customClass="TrackingInterfaceController" customModule="MotionTracking_WatchKit_Extension">
+                    <items>
+                        <group height="1" alignment="left" layout="vertical" id="ym1-nm-PCL">
+                            <items>
+                                <group width="1" height="0.59999999999999998" alignment="left" id="xAk-Mj-AeU">
+                                    <items>
+                                        <timer height="1" alignment="center" verticalAlignment="bottom" id="xij-b4-73W">
+                                            <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                            <calendarUnit key="units" minute="YES" second="YES"/>
+                                        </timer>
+                                    </items>
+                                </group>
+                                <button width="1" height="0.40000000000000002" alignment="left" title="Stop tracking" id="gEj-uA-DjO">
+                                    <connections>
+                                        <action selector="stopAction" destination="rw3-6r-soZ" id="QaP-DC-ZHh"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="interfaceTimer" destination="xij-b4-73W" id="R7X-aS-zFz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="976" y="102"/>
+        </scene>
+        <!--ResultInterfaceController-->
+        <scene sceneID="p4y-YS-iko">
+            <objects>
+                <controller identifier="ResultInterfaceController" id="ZIG-6e-PkO" customClass="ResultInterfaceController" customModule="MotionTracking_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" spacing="8" id="6Z6-aD-bg4">
+                            <items>
+                                <group width="1" alignment="left" layout="vertical" id="jl0-ZR-xGh">
+                                    <items>
+                                        <label alignment="left" text="Gravity" id="WcZ-pj-q8N">
+                                            <color key="textColor" name="AccentColor"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                        </label>
+                                        <group width="1" alignment="left" verticalAlignment="center" id="NvO-AV-ZAL">
+                                            <items>
+                                                <group width="0.34999999999999998" alignment="left" verticalAlignment="center" id="kwF-WL-NYK">
+                                                    <items>
+                                                        <label alignment="left" text="0.0" id="RBX-Qf-zrW">
+                                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="x" id="2OE-p2-ghn">
+                                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.34999999999999998" alignment="left" verticalAlignment="center" id="7ZK-Vj-6xz">
+                                                    <items>
+                                                        <label alignment="left" text="0.0" id="BRR-0P-AdO">
+                                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="y" id="OIU-u2-qeg">
+                                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.34999999999999998" alignment="left" verticalAlignment="center" id="RhL-g9-DtZ">
+                                                    <items>
+                                                        <label alignment="left" text="0.0" id="fvc-l5-Tie">
+                                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="z" id="kqk-w2-CtZ">
+                                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <separator alignment="left" id="bY8-Ce-Ymx">
+                                    <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </separator>
+                                <group width="1" alignment="left" layout="vertical" id="Cnv-bJ-yPD">
+                                    <items>
+                                        <label alignment="left" text="Acceleration" id="DIY-vz-fGP">
+                                            <color key="textColor" name="AccentColor"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                        </label>
+                                        <group width="1" alignment="center" verticalAlignment="center" id="4IC-l7-EXv">
+                                            <items>
+                                                <group width="0.34999999999999998" alignment="left" verticalAlignment="center" id="NTZ-gH-gar">
+                                                    <items>
+                                                        <label alignment="left" text="0.0" id="bBB-O4-7hm">
+                                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="x" id="OHR-4B-HvY">
+                                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.34999999999999998" alignment="left" verticalAlignment="center" id="Hmj-09-pht">
+                                                    <items>
+                                                        <label alignment="left" text="0.0" id="rL7-mb-H3o">
+                                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="y" id="Qz4-BR-eKZ">
+                                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.34999999999999998" alignment="left" verticalAlignment="center" id="xbF-ec-6Ix">
+                                                    <items>
+                                                        <label alignment="left" text="0.0" id="GI1-JV-hNo">
+                                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="z" id="62Q-gf-8CB">
+                                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <separator alignment="left" id="ItI-4g-bRw">
+                                    <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </separator>
+                                <group width="1" alignment="left" layout="vertical" id="zuK-67-PpU">
+                                    <items>
+                                        <label alignment="left" text="Rotation" id="9gb-Zc-ZRp">
+                                            <color key="textColor" name="AccentColor"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                        </label>
+                                        <group width="1" alignment="center" verticalAlignment="center" id="HBu-hv-RBA">
+                                            <items>
+                                                <group width="0.34999999999999998" alignment="left" verticalAlignment="center" id="DnP-wE-gyU">
+                                                    <items>
+                                                        <label alignment="left" text="0.0" id="jcu-8a-Bw8">
+                                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="x" id="Zap-eI-4Lq">
+                                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.34999999999999998" alignment="left" verticalAlignment="center" id="gMP-8Q-MJw">
+                                                    <items>
+                                                        <label alignment="left" text="0.0" id="kTj-e3-MWV">
+                                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="y" id="OEX-Fq-1qj">
+                                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                                <group width="0.34999999999999998" alignment="left" verticalAlignment="center" id="EIe-ji-6zw">
+                                                    <items>
+                                                        <label alignment="left" text="0.0" id="YyK-Fy-n4C">
+                                                            <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
+                                                        </label>
+                                                        <label alignment="left" verticalAlignment="bottom" text="z" id="JpW-TJ-tUK">
+                                                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        </label>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="accelerationXLabel" destination="bBB-O4-7hm" id="a7w-Ia-51M"/>
+                        <outlet property="accelerationYLabel" destination="rL7-mb-H3o" id="olt-8h-Lq9"/>
+                        <outlet property="accelerationZLabel" destination="GI1-JV-hNo" id="eaB-D2-qep"/>
+                        <outlet property="gravityXLabel" destination="RBX-Qf-zrW" id="foP-q7-Cqk"/>
+                        <outlet property="gravityYLabel" destination="BRR-0P-AdO" id="LrA-Vm-MNx"/>
+                        <outlet property="gravityZLabel" destination="fvc-l5-Tie" id="6WQ-vd-IUQ"/>
+                        <outlet property="rotationXLabel" destination="jcu-8a-Bw8" id="0wI-TC-eYe"/>
+                        <outlet property="rotationYLabel" destination="kTj-e3-MWV" id="63A-Gc-su8"/>
+                        <outlet property="rotationZLabel" destination="YyK-Fy-n4C" id="wc9-9T-Bea"/>
+                        <segue destination="rw3-6r-soZ" kind="relationship" relationship="nextPage" id="JOU-Dt-KgG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="648" y="103"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="MotionTracking_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="813"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="MotionTracking_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="499"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

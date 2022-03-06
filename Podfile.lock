@@ -1,0 +1,16 @@
+PODS:
+  - SwiftCSVExport (2.6.0)
+
+DEPENDENCIES:
+  - SwiftCSVExport (= 2.6.0)
+
+SPEC REPOS:
+  trunk:
+    - SwiftCSVExport
+
+SPEC CHECKSUMS:
+  SwiftCSVExport: d9db3fb80484115028792f8d539445e3fb2c0ecb
+
+PODFILE CHECKSUM: 0d79afb0f8c91d2d72352b33256b47a7c0dcdaf5
+
+COCOAPODS: 1.10.1
