@@ -70,6 +70,22 @@ class FileTrackingManager {
         @retrun Tracking files entities array
      */
     func filesTracking() -> [FileTrackingEntity] {
+        #if targetEnvironment(simulator)
+        return [
+            FileTrackingEntity(
+                name: "File1",
+                date: Date(),
+                fileUrl: URL(fileURLWithPath: ""),
+                isLocation: false
+            ),
+            FileTrackingEntity(
+                name: "File2",
+                date: Date(),
+                fileUrl: URL(fileURLWithPath: ""),
+                isLocation: false
+            )
+        ]
+        #else
         let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
         if let arrayFile = try? FileManager.default.contentsOfDirectory(atPath: url.path) {
             return arrayFile
@@ -80,6 +96,7 @@ class FileTrackingManager {
                 }
         }
         return []
+        #endif
     }
     
     /**
@@ -94,7 +111,7 @@ class FileTrackingManager {
     // MARK: Private method
     
     /**
-        Create and retourn the file name
+        Create and return the name file
      
         @Param withLocation - Add the location parameter in the file name
      */

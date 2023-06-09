@@ -7,6 +7,7 @@ target 'MotionTracking' do
 
   # Pods for MotionTracking
   pod 'SwiftCSVExport' , '= 2.6.0'
+  pod 'SSZipArchive', '2.5.3'
 
   target 'MotionTrackingTests' do
     inherit! :search_paths
@@ -24,7 +25,7 @@ target 'MotionTracking WatchKit App' do
   use_frameworks!
 
   # Pods for MotionTracking WatchKit App
-  pod 'SwiftCSVExport' , '= 2.6.0'
+  #pod 'SwiftCSVExport' , '= 2.6.0'
 
   target 'MotionTracking WatchKit AppTests' do
     inherit! :search_paths
