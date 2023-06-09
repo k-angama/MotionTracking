@@ -1,9 +1,9 @@
 PODS:
-  - SSZipArchive (2.4.3)
+  - SSZipArchive (2.5.3)
   - SwiftCSVExport (2.6.0)
 
 DEPENDENCIES:
-  - SSZipArchive
+  - SSZipArchive (= 2.5.3)
   - SwiftCSVExport (= 2.6.0)
 
 SPEC REPOS:
@@ -12,9 +12,9 @@ SPEC REPOS:
     - SwiftCSVExport
 
 SPEC CHECKSUMS:
-  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
+  SSZipArchive: d3ea9f5e15234229a8d7e164c2789a82b7c19440
   SwiftCSVExport: d9db3fb80484115028792f8d539445e3fb2c0ecb
 
-PODFILE CHECKSUM: f8617cd7344d5985224cd580ac94a90b78691a1f
+PODFILE CHECKSUM: c9ebffc402cea108d4fc75838ebb548978905686
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

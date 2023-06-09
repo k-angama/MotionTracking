@@ -31,6 +31,7 @@ The Application uses CoreMotion and LocationManager to collect the data and save
 
 ## ToDo
 
+- [x] Delete multiple files at once
 - [x] Create group files
 - [x] Organize your csv files to export to Create ML
 
