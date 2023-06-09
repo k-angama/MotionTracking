@@ -20,6 +20,11 @@ class ExportFileViewController: BaseTableViewController<ExportFileViewModel> {
     @IBOutlet weak var cordinateSwitch: UISwitch!
     @IBOutlet weak var altitudeSwitch: UISwitch!
     
+    private lazy var refreshBarButton: UIBarButtonItem = {
+        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(style: .medium)
+        activityIndicator.startAnimating()
+        return UIBarButtonItem(customView: activityIndicator)
+    }()
     
     // MARK: Override method
     
@@ -98,6 +103,13 @@ class ExportFileViewController: BaseTableViewController<ExportFileViewModel> {
             .assign(to: \.isEnabled, on: cordinateSwitch)
             .store(in: &cancellable)
         
+        viewModel.$isLoading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                self?.loadAnimation(value)
+            }
+            .store(in: &cancellable)
+        
     }
     
     // MARK: Action method
@@ -136,25 +148,35 @@ class ExportFileViewController: BaseTableViewController<ExportFileViewModel> {
     
     // MARK: Private method
     
+    private func loadAnimation(_ value: Bool) {
+        if value {
+            navigationItem.rightBarButtonItem = refreshBarButton
+        }else{
+            navigationItem.rightBarButtonItem = exportButton
+        }
+        view.isUserInteractionEnabled = !value
+    }
+    
     private func sharingCSV(filePath: String) {
+        
+        let firstActivityItem = NSURL(fileURLWithPath: filePath)
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [firstActivityItem], applicationActivities: nil)
+
+        activityViewController.excludedActivityTypes = [
+            UIActivity.ActivityType.postToTwitter,
+            UIActivity.ActivityType.postToWeibo,
+            UIActivity.ActivityType.message,
+            UIActivity.ActivityType.print,
+            UIActivity.ActivityType.saveToCameraRoll,
+            UIActivity.ActivityType.postToFlickr,
+            UIActivity.ActivityType.postToVimeo,
+            UIActivity.ActivityType.postToTencentWeibo,
+            UIActivity.ActivityType.openInIBooks,
+            UIActivity.ActivityType.markupAsPDF
+        ]
+        
         DispatchQueue.main.async {
-            let firstActivityItem = NSURL(fileURLWithPath: filePath)
-            let activityViewController : UIActivityViewController = UIActivityViewController(
-                activityItems: [firstActivityItem], applicationActivities: nil)
-
-            activityViewController.excludedActivityTypes = [
-                UIActivity.ActivityType.postToTwitter,
-                UIActivity.ActivityType.postToWeibo,
-                UIActivity.ActivityType.message,
-                UIActivity.ActivityType.print,
-                UIActivity.ActivityType.saveToCameraRoll,
-                UIActivity.ActivityType.postToFlickr,
-                UIActivity.ActivityType.postToVimeo,
-                UIActivity.ActivityType.postToTencentWeibo,
-                UIActivity.ActivityType.openInIBooks,
-                UIActivity.ActivityType.markupAsPDF
-            ]
-
             self.present(activityViewController, animated: true, completion: nil)
         }
     }

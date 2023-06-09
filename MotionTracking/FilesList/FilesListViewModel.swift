@@ -16,6 +16,12 @@ class FilesListViewModel: BaseViewModel {
     
     /// Output observable
     @Published var hiddenTextNoFile = false
+    @Published var filesSelected: [FileTrackingEntity] = []
+    @Published var showToolBar = false
+    @Published var isEditing = false
+    @Published var isEnabledEditButton = false
+    @Published var isAllSelected = false
+    @Published var stateSelectedButton = false
     var filesDidChange = PassthroughSubject<Void, Never>()
     var removeFile = PassthroughSubject<Int, Never>()
     var inserFile = PassthroughSubject<Void, Never>()
@@ -46,6 +52,35 @@ class FilesListViewModel: BaseViewModel {
         }
         .assign(to: \.hiddenTextNoFile, on: self)
         .store(in: &cancellable)
+        
+        // Enable button when at least one row is selected
+        $filesSelected
+        .map { $0.count > 0}
+        .assign(to: &$isEnabledEditButton)
+        
+        // Show toolbar when editing is open
+        $isEditing.assign(to: &$showToolBar)
+        
+        // Remove all selected files when editing is close
+        $isEditing.sink { [weak self] value in
+            if !value {
+                self?.isAllSelected = false
+            }
+        }
+        .store(in: &cancellable)
+        
+        // Change tile selected button
+        $isAllSelected
+            .assign(to: &$stateSelectedButton)
+        
+        $filesSelected
+            .sink { [weak self] entities in
+                if entities.count > 0 && entities.count == self?.files.count && !(self?.isAllSelected ?? false) {
+                    self?.isAllSelected = true
+                }
+            }
+            .store(in: &cancellable)
+        
         
     }
     

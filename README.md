@@ -26,6 +26,14 @@ The Application uses CoreMotion and LocationManager to collect the data and save
 - [x] Export of csv files
 - [x] Delete of csv files
 - [x] Choice of data to export (Timestamp, gravity, rotation, acceleration, coordinate, altitude)
+- [x] Export multiple files in zip format
+
+
+## ToDo
+
+- [x] Delete multiple files at once
+- [x] Create group files
+- [x] Organize your csv files to export to Create ML
 
 
 ## Requirements

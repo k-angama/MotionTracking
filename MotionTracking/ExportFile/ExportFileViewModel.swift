@@ -15,7 +15,7 @@ class ExportFileViewModel: BaseViewModel {
     
     /// Output
     @Published var fileName: String?
-    @Published var fileTrackingEntity: FileTrackingEntity?
+    @Published var fileTrackingEntity: [FileTrackingEntity] = []
     @Published var enabledExportButton = false
     
     // Input
@@ -26,6 +26,7 @@ class ExportFileViewModel: BaseViewModel {
     @Published var cordinateValue = true
     @Published var altitudeValue = true
     @Published var enabledLocationValue = true
+    @Published var isLoading = false
     @Published var sharingCsvPathFile = PassthroughSubject<String, Never>()
     
     
@@ -37,7 +38,7 @@ class ExportFileViewModel: BaseViewModel {
         // Disable location switches if they are not present in the file
         $fileTrackingEntity
             .sink { [weak self] entity in
-                if let isLocation = entity?.isLocation, !isLocation {
+                if let isLocation = entity.first?.isLocation, !isLocation {
                     self?.cordinateValue = false
                     self?.altitudeValue = false
                     self?.enabledLocationValue = false
@@ -47,8 +48,8 @@ class ExportFileViewModel: BaseViewModel {
         
         // Pass the file name to display it
         $fileTrackingEntity
-            .sink { [weak self] entity in
-                self?.fileName = entity?.name ?? ""
+            .sink { [weak self] entities in
+                self?.fileName = self?.name(entities)
             }
             .store(in: &cancellable)
         
@@ -76,16 +77,40 @@ class ExportFileViewModel: BaseViewModel {
     // MARK: Public method
     
     func exportCSV() {
-        guard let fileURL = fileTrackingEntity?.fileUrl else { return }
-        do {
-            let path = try fileManager.save(fileUrl: fileURL)
-            sharingCsvPathFile.send(path)
-        } catch {
-            self .error(error)
+        isLoading = true
+        if self.fileTrackingEntity.count > 1 {
+            self.fileManager.save(
+                filesUrl: self.fileTrackingEntity.map { $0.fileUrl },
+                block: { zipPath, error in
+                    if let error = error {
+                        self.error(error)
+                    } else {
+                        self.sharingCsvPathFile.send(zipPath)
+                    }
+                    self.isLoading = false
+                }
+            )
+        } else {
+            guard let fileURL = fileTrackingEntity.first?.fileUrl else { return }
+            self.fileManager.save(fileUrl: fileURL) { csvPath, error in
+                if let error = error {
+                    self.error(error)
+                } else if let csvPath = csvPath {
+                    self.sharingCsvPathFile.send(csvPath)
+                }
+                self.isLoading = false
+            }
         }
     }
     
     // MARK: Private method
+    
+    private func name(_ entities: [FileTrackingEntity]) -> String{
+        if entities.count == 1 {
+            return entities.first?.name ?? ""
+        }
+        return "Files to export: \(entities.count)"
+    }
     
     private func combineSwitchValue() -> Publishers.CombineLatest<Publishers.CombineLatest4<Published<Bool>.Publisher, Published<Bool>.Publisher, Published<Bool>.Publisher, Published<Bool>.Publisher>, Publishers.CombineLatest<Published<Bool>.Publisher, Published<Bool>.Publisher>> {
         Publishers.CombineLatest(
