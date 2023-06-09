@@ -158,7 +158,6 @@ class CSVFileManager {
     private func save(fileUrl: URL) throws -> String {
         let json = try String(contentsOf: fileUrl)
         let fileName = fileUrl.deletingPathExtension().lastPathComponent
-        print(fileName)
         let fields = getFields()
         return CSVExport.exportWithString(
             fileName,
