@@ -11,12 +11,21 @@ import Foundation
  Entity tracking file
  
  */
-struct FileTrackingEntity {
+struct FileTrackingEntity: Equatable {
     let information: String
     let date: Date
     let fileUrl: URL
     let isLocation: Bool
+    
+    static func ==(lhs: FileTrackingEntity, rhs: FileTrackingEntity) -> Bool {
+        return lhs.information == rhs.information &&
+        lhs.date.compare(rhs.date) == .orderedSame &&
+        lhs.fileUrl.absoluteString == rhs.fileUrl.absoluteString &&
+        lhs.isLocation == rhs.isLocation
+    }
 }
+
+
 
 /**
  File Tracking manager
