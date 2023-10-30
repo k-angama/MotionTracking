@@ -12,7 +12,7 @@ import Foundation
  
  */
 struct FileTrackingEntity {
-    let name: String
+    let information: String
     let date: Date
     let fileUrl: URL
     let isLocation: Bool
@@ -38,16 +38,22 @@ class FileTrackingManager {
         Add file in the cache directory
      
         @param json - Tracking data
-        @param withLocation - Specify if there is location in the data
+        @param location - Specify if there is location in the data
+        @param time - Specify recording time
+        @param count - Specify data count
         @retrun The file  url stored  in the cache directory
      */
-    func writeFileTransfer(json: String, withLocation: Bool) throws -> URL {
-        let fileName = nameOfTransferFile(withLocation: withLocation)
-        let path = FileManager.default.urls(
-            for: .cachesDirectory,
-            in: .userDomainMask
-        )[0].appendingPathComponent("\(fileName)\(Const.extensionTXT)")
-        try json.write(to: path, atomically: true, encoding: .utf8)
+    func writeFileTransfer(
+        json: String,
+        location: Bool,
+        time: Double,
+        count: Int) throws -> URL {
+            let fileName = nameOfTransferFile(withLocation: location, second: time, count: count)
+            let path = FileManager.default.urls(
+                for: .cachesDirectory,
+                in: .userDomainMask
+            )[0].appendingPathComponent("\(fileName)\(Const.extensionTXT)")
+            try json.write(to: path, atomically: true, encoding: .utf8)
         return path
     }
     
@@ -70,33 +76,28 @@ class FileTrackingManager {
         @retrun Tracking files entities array
      */
     func filesTracking() -> [FileTrackingEntity] {
-        #if targetEnvironment(simulator)
-        return [
-            FileTrackingEntity(
-                name: "File1",
-                date: Date(),
-                fileUrl: URL(fileURLWithPath: ""),
-                isLocation: false
-            ),
-            FileTrackingEntity(
-                name: "File2",
-                date: Date(),
-                fileUrl: URL(fileURLWithPath: ""),
-                isLocation: false
-            )
-        ]
-        #else
+
+        var arrayFile: [String]? = nil
         let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        if let arrayFile = try? FileManager.default.contentsOfDirectory(atPath: url.path) {
-            return arrayFile
-                .filter { $0.contains(Const.extensionTXT) }
-                .map { fileTracking(fileUrl: url.appendingPathComponent($0)) }
-                .sorted {
-                    $0.date.compare($1.date) == .orderedDescending
-                }
-        }
-        return []
-        #endif
+#if targetEnvironment(simulator)
+        arrayFile = [
+            "\(nameOfTransferFile(withLocation: false, second: 5, count: 200))\(Const.extensionTXT)",
+            "\(nameOfTransferFile(withLocation: true, second: 10, count: 576))\(Const.extensionTXT)",
+            "\(nameOfTransferFile(withLocation: false, second: 3, count: 187))\(Const.extensionTXT)",
+            "\(nameOfTransferFile(withLocation: false, second: 10, count: 583))\(Const.extensionTXT)",
+            "\(nameOfTransferFile(withLocation: false, second: 8, count: 370))\(Const.extensionTXT)",
+            "\(nameOfTransferFile(withLocation: true, second: 12, count: 600))\(Const.extensionTXT)",
+        ]
+#else
+        arrayFile = try? FileManager.default.contentsOfDirectory(atPath: url.path)
+#endif
+        return arrayFile?
+            .filter { $0.contains(Const.extensionTXT) }
+            .map { fileTracking(fileUrl: url.appendingPathComponent($0)) }
+            .sorted {
+                $0.date.compare($1.date) == .orderedDescending
+            } ?? []
+        
     }
     
     /**
@@ -115,10 +116,11 @@ class FileTrackingManager {
      
         @Param withLocation - Add the location parameter in the file name
      */
-    private func nameOfTransferFile(withLocation: Bool) -> String {
+    private func nameOfTransferFile(withLocation: Bool, second: Double, count: Int) -> String {
         let date = Date().nowDateIso8601
-        let withLocation = withLocation ? "_\(Const.location)" : ""
-        return "\(Const.nameFile)_\(date)\(withLocation)"
+        let withLocation = withLocation ? "\(Const.separation)\(Const.location)" : ""
+        let information = "\(second.time)\(Const.separation)\(count)"
+        return "\(Const.nameFile)\(Const.separation)\(date)\(withLocation)\(Const.separation)\(information)"
     }
     
     /**
@@ -131,11 +133,15 @@ class FileTrackingManager {
         let fileName = fileUrl.deletingPathExtension().lastPathComponent
         let array = fileName.components(separatedBy: Const.separation)
         return FileTrackingEntity(
-            name: array.first ?? "untitled",
+            information: trackingInformation(array),
             date: Date.string(date: array[1]),
             fileUrl: fileUrl,
             isLocation: fileName.contains(Const.location)
         )
+    }
+    
+    private func trackingInformation(_ array: [String]) -> String {
+        array.count >= 4 ? "\(array[array.endIndex - 2]) - \(array.last ?? "-") records" : "No information"
     }
     
 }

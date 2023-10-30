@@ -37,3 +37,14 @@ extension Date {
     }
     
 }
+
+extension Double {
+
+    var time: String {
+        let format = DateComponentsFormatter()
+        format.allowedUnits = [.hour, .minute, .second]
+        format.unitsStyle = .brief
+        return format.string(from: TimeInterval(self)) ?? "-"
+    }
+    
+}

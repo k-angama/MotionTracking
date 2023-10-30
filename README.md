@@ -12,7 +12,7 @@ The Application uses CoreMotion and LocationManager to collect the data and save
 <img src="Screenshots/screenshot-applewatch-1.png" width="240" /> <img src="Screenshots/screenshot-applewatch-2.png" width="240" /> <img src="Screenshots/screenshot-applewatch-3.png" width="240" /> <img src="Screenshots/screenshot-applewatch-4.png" width="240" />
 
 ### iPhone
-<img src="Screenshots/screenshot-iphone-1.jpeg" width="380" /> <img src="Screenshots/screenshot-iphone-2.jpeg" width="380" />
+<img src="Screenshots/screenshot-iphone-1.png" width="380" /> <img src="Screenshots/screenshot-iphone-2.png" width="380" />
 
 
 ## Features

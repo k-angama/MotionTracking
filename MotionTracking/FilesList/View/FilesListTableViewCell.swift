@@ -12,10 +12,18 @@ class FilesListTableViewCell:UITableViewCell {
     
     func configuration(entity: FileTrackingEntity) {
         var content = self.defaultContentConfiguration()
-        content.text = entity.name
-        content.secondaryText = entity.date.mediumDate
-        content.image = UIImage(systemName: "doc", withConfiguration: nil)
+        content.text = entity.date.mediumDate
+        content.secondaryText = entity.information
+        content.image = imageCell(entity.isLocation)
         self.contentConfiguration = content
+    }
+    
+    private func imageCell(_ isLocation: Bool) -> UIImage? {
+        isLocation
+        ?
+        UIImage(systemName: "location.square", withConfiguration: nil)
+        :
+        UIImage(systemName: "doc", withConfiguration: nil)
     }
 
 }
