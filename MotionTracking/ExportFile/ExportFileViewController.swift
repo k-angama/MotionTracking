@@ -32,11 +32,11 @@ class ExportFileViewController: BaseTableViewController<ExportFileViewModel> {
         super.setupObservers()
         
         // Display file name
-        viewModel.$fileName
+        viewModel.$infomation
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] name in
+            .sink { [weak self] info in
                 var test = self?.titleTableViewCell.defaultContentConfiguration()
-                test?.text = name
+                test?.text = info
                 self?.titleTableViewCell.contentConfiguration = test
             }
             .store(in: &cancellable)

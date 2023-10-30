@@ -14,7 +14,7 @@ class ExportFileViewModel: BaseViewModel {
     let fileManager = CSVFileManager()
     
     /// Output
-    @Published var fileName: String?
+    @Published var infomation: String?
     @Published var fileTrackingEntity: [FileTrackingEntity] = []
     @Published var enabledExportButton = false
     
@@ -46,10 +46,10 @@ class ExportFileViewModel: BaseViewModel {
             }
             .store(in: &cancellable)
         
-        // Pass the file name to display it
+        // Pass the information file to display it
         $fileTrackingEntity
             .sink { [weak self] entities in
-                self?.fileName = self?.name(entities)
+                self?.infomation = self?.information(entities)
             }
             .store(in: &cancellable)
         
@@ -105,9 +105,9 @@ class ExportFileViewModel: BaseViewModel {
     
     // MARK: Private method
     
-    private func name(_ entities: [FileTrackingEntity]) -> String{
+    private func information(_ entities: [FileTrackingEntity]) -> String{
         if entities.count == 1 {
-            return entities.first?.name ?? ""
+            return entities.first?.information ?? ""
         }
         return "Files to export: \(entities.count)"
     }

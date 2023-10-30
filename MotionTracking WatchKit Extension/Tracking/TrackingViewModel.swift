@@ -70,7 +70,9 @@ class TrackingViewModel: BaseViewModel {
             let json = try JSONEncoder().encode(entity: result)
             let filePath = try fileTrackingManager.writeFileTransfer(
                 json: json,
-                withLocation: Parameters.getLocation()
+                location: Parameters.getLocation(),
+                time: Parameters.getTimer(),
+                count: result.count
             )
             
             // Transfer json file to iPhone
