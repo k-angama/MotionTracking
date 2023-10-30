@@ -20,11 +20,11 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
         
         tableView.allowsMultipleSelectionDuringEditing = true
         navigationItem.rightBarButtonItem = editButtonItem
-        
-        let selectAllButton = UIBarButtonItem(title: "Select all", style: .plain, target: self, action: #selector(selectAllTapped))
+
         let exportButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(exportTapped))
+        let trashButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashTapped))
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        toolbarItems = [selectAllButton, spacer, exportButton]
+        toolbarItems = [trashButton, spacer, exportButton]
     }
 
     override func setupObservers() {
@@ -53,7 +53,7 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
             .store(in: &cancellable)
         
         // Remove row from tableview
-        viewModel.removeFile
+        viewModel.removeFiles
             .receive(on: DispatchQueue.main)
             .sink { [weak self] index in
                 self?.deleteRows(index)
@@ -70,9 +70,10 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
             .store(in: &cancellable)
         
         // Enable the edit button
-        viewModel.$isEnabledEditButton
+        viewModel.$isEnabledButton
             .removeDuplicates()
             .sink { [weak self] value in
+                self?.toolbarItems?.first?.isEnabled = value
                 self?.toolbarItems?.last?.isEnabled = value
             }
             .store(in: &cancellable)
@@ -84,6 +85,24 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
             .sink { [weak self] value in
                 if self?.tableView.isEditing != value {
                     self?.tableView.setEditing(value, animated: true)
+                }
+            }
+            .store(in: &cancellable)
+        
+        // Show select all button
+        viewModel.$isEditing
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] value in
+                if !value {
+                    self?.navigationItem.leftBarButtonItem = nil
+                } else {
+                    self?.navigationItem.leftBarButtonItem = UIBarButtonItem(
+                        title: "Select all",
+                        style: .plain,
+                        target: self,
+                        action: #selector(self?.selectAllTapped)
+                    )
                 }
             }
             .store(in: &cancellable)
@@ -102,9 +121,9 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] value in
                 if value {
-                    self?.toolbarItems?.first?.title = "Deselect all"
+                    self?.navigationItem.leftBarButtonItem?.title = "Deselect all"
                 }else{
-                    self?.toolbarItems?.first?.title = "Select all"
+                    self?.navigationItem.leftBarButtonItem?.title = "Select all"
                 }
             }
             .store(in: &cancellable)
@@ -134,12 +153,18 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
     
-    private func deleteRows(_ index: Int) {
-        tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    private func deleteRows(_ index: [Int]) {
+        tableView.deleteRows(at: index.flatMap {
+            [IndexPath(row: $0, section: 0)]
+        }, with: .automatic)
     }
     
     private func reloadData() {
         tableView.reloadData()
+    }
+    
+    @objc func trashTapped() {
+        confirmDeleteMessage()
     }
     
     @objc func exportTapped() {
@@ -167,6 +192,23 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
     private func filesSelected() {
         viewModel.filesSelected = tableView.indexPathsForSelectedRows?
             .compactMap { viewModel.files[$0.row] } ?? []
+    }
+    
+    private func confirmDeleteMessage() {
+        let alertController = UIAlertController(
+            title: "Delete files",
+            message: "Are you sure you want to delete these files?",
+            preferredStyle: .alert
+        )
+        alertController.addAction(
+            UIAlertAction(title: "Cancel", style: .cancel)
+        )
+        alertController.addAction(
+            UIAlertAction(title: "Yes", style: .destructive, handler: { [weak self     ] _ in
+                self?.viewModel.removeMultiFiles()
+            })
+        )
+        present(alertController, animated: true)
     }
 
 }

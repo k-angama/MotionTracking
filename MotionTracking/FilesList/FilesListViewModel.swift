@@ -19,11 +19,11 @@ class FilesListViewModel: BaseViewModel {
     @Published var filesSelected: [FileTrackingEntity] = []
     @Published var showToolBar = false
     @Published var isEditing = false
-    @Published var isEnabledEditButton = false
+    @Published var isEnabledButton = false
     @Published var isAllSelected = false
     @Published var stateSelectedButton = false
     var filesDidChange = PassthroughSubject<Void, Never>()
-    var removeFile = PassthroughSubject<Int, Never>()
+    var removeFiles = PassthroughSubject<[Int], Never>()
     var inserFile = PassthroughSubject<Void, Never>()
     
     /// Output property
@@ -44,7 +44,7 @@ class FilesListViewModel: BaseViewModel {
         // Hide the message if there is a list of files
         Publishers.Merge3(
             filesDidChange,
-            removeFile.map { _ in () },
+            removeFiles.map { _ in () },
             inserFile
         )
         .map { [weak self] _ in
@@ -56,7 +56,7 @@ class FilesListViewModel: BaseViewModel {
         // Enable button when at least one row is selected
         $filesSelected
         .map { $0.count > 0}
-        .assign(to: &$isEnabledEditButton)
+        .assign(to: &$isEnabledButton)
         
         // Show toolbar when editing is open
         $isEditing.assign(to: &$showToolBar)
@@ -105,10 +105,28 @@ class FilesListViewModel: BaseViewModel {
         do {
             try fileTrackingManager.removeFile(fileUrl: files[index].fileUrl)
             files.remove(at: index)
-            removeFile.send(index)
+            removeFiles.send([index])
         } catch {
             self.error(error)
         }
+    }
+    
+    func removeMultiFiles() {
+        var index: [Int] = []
+        do {
+            for entity in filesSelected {
+                try fileTrackingManager.removeFile(fileUrl: entity.fileUrl)
+                if let i = files.lastIndex(where: { $0 == entity }) {
+                    index.append(i)
+                }
+            }
+        } catch {
+            self.error(error)
+        }
+        for i in index {
+            files.remove(at: i)
+        }
+        removeFiles.send(index)
     }
     
     // MARK: Private method
