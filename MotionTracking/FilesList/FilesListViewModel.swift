@@ -15,10 +15,11 @@ class FilesListViewModel: BaseViewModel {
     var fileTrackingManager = FileTrackingManager()
     
     /// Output observable
-    @Published var hiddenTextNoFile = false
+    @Published var isFilesExist = false
     @Published var filesSelected: [FileTrackingEntity] = []
     @Published var showToolBar = false
-    @Published var isEditing = false
+    @Published var isEditingTableView = false
+    @Published var isEditingViewController = false
     @Published var isEnabledButton = false
     @Published var isAllSelected = false
     @Published var stateSelectedButton = false
@@ -50,8 +51,14 @@ class FilesListViewModel: BaseViewModel {
         .map { [weak self] _ in
             self?.files.count ?? 0 > 0
         }
-        .assign(to: \.hiddenTextNoFile, on: self)
+        .assign(to: \.isFilesExist, on: self)
         .store(in: &cancellable)
+        
+        $isFilesExist
+            .filter { [weak self] value in
+                return (self?.isEditingTableView ?? false) && !value
+            }
+            .assign(to: &$isEditingViewController)
         
         // Enable button when at least one row is selected
         $filesSelected
@@ -59,10 +66,10 @@ class FilesListViewModel: BaseViewModel {
         .assign(to: &$isEnabledButton)
         
         // Show toolbar when editing is open
-        $isEditing.assign(to: &$showToolBar)
+        $isEditingTableView.assign(to: &$showToolBar)
         
         // Remove all selected files when editing is close
-        $isEditing.sink { [weak self] value in
+        $isEditingTableView.sink { [weak self] value in
             if !value {
                 self?.isAllSelected = false
             }

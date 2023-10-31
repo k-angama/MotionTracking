@@ -31,9 +31,21 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
         super.setupObservers()
 
         // Hide the message if there is a list of files
-        viewModel.$hiddenTextNoFile
+        viewModel.$isFilesExist
             .receive(on: DispatchQueue.main)
             .assign(to: \.isHidden, on: noFilesLabel)
+            .store(in: &cancellable)
+        
+        // Disable Edit button if there are no files
+        viewModel.$isFilesExist
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isEnabled, on: editButtonItem)
+            .store(in: &cancellable)
+        
+        viewModel.$isEditingViewController
+            .dropFirst()
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isEditing, on: self)
             .store(in: &cancellable)
         
         // Reload data when files added
@@ -79,7 +91,7 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
             .store(in: &cancellable)
         
         // Show table view editing
-        viewModel.$isEditing
+        viewModel.$isEditingTableView
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] value in
@@ -90,7 +102,7 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
             .store(in: &cancellable)
         
         // Show select all button
-        viewModel.$isEditing
+        viewModel.$isEditingTableView
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] value in
@@ -143,7 +155,7 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        viewModel.isEditing = !viewModel.isEditing
+        viewModel.isEditingTableView = !viewModel.isEditingTableView
     }
     
     
