@@ -112,21 +112,22 @@ class FilesListViewModel: BaseViewModel {
     }
     
     func removeMultiFiles() {
-        var index: [Int] = []
+        var index: [Int:FileTrackingEntity] = [:]
         do {
             for entity in filesSelected {
                 try fileTrackingManager.removeFile(fileUrl: entity.fileUrl)
-                if let i = files.lastIndex(where: { $0 == entity }) {
-                    index.append(i)
+                if let i = files.firstIndex(where: { $0 == entity }) {
+                    index[i] = entity
                 }
             }
         } catch {
             self.error(error)
         }
-        for i in index {
-            files.remove(at: i)
+        for (_, entity) in index {
+            files.removeAll { $0 == entity }
         }
-        removeFiles.send(index)
+        removeFiles.send(index.map{ $0.key })
+        index.removeAll()
     }
     
     // MARK: Private method
