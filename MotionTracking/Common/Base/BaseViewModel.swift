@@ -22,7 +22,7 @@ class BaseRouter {
     
 }
 
-class BaseViewModel: ViewModel {
+class BaseViewModel: ViewModel{
     
     /// For memory management and subscriptions cancellations
     var cancellable = Set<AnyCancellable>()

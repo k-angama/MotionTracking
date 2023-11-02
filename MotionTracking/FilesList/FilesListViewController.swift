@@ -45,7 +45,9 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
         viewModel.$isEditingViewController
             .dropFirst()
             .receive(on: DispatchQueue.main)
-            .assign(to: \.isEditing, on: self)
+            .sink(receiveValue: { [weak self] value in
+                self?.isEditing = value
+            })
             .store(in: &cancellable)
         
         // Reload data when files added
@@ -216,7 +218,7 @@ class FilesListViewController: BaseViewController<FilesListViewModel> {
             UIAlertAction(title: "Cancel", style: .cancel)
         )
         alertController.addAction(
-            UIAlertAction(title: "Yes", style: .destructive, handler: { [weak self     ] _ in
+            UIAlertAction(title: "Yes", style: .destructive, handler: { [weak self] _ in
                 self?.viewModel.removeMultiFiles()
             })
         )

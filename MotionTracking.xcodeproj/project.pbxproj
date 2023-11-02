@@ -34,6 +34,11 @@
 		251B96D827AC161100246CAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251B96D727AC161100246CAB /* BaseViewController.swift */; };
 		251B96DA27AC1C3C00246CAB /* FilesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251B96D927AC1C3C00246CAB /* FilesListViewModel.swift */; };
 		254F124027C6975900D7AD88 /* CSVFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254F123F27C6975900D7AD88 /* CSVFileManager.swift */; };
+		25970B632AF2C8BF00044419 /* DirectoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25970B622AF2C8BF00044419 /* DirectoriesListViewController.swift */; };
+		25970B652AF2C8D100044419 /* DirectoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25970B642AF2C8D100044419 /* DirectoriesListViewModel.swift */; };
+		25970B682AF2CB8700044419 /* DirectoriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25970B672AF2CB8700044419 /* DirectoriesListTableViewCell.swift */; };
+		25970B6A2AF2DBF300044419 /* ManagerInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25970B692AF2DBF300044419 /* ManagerInjector.swift */; };
+		25970B6B2AF2DC6A00044419 /* ManagerInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25970B692AF2DBF300044419 /* ManagerInjector.swift */; };
 		25A7E3FD27985C5B00A498AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E3FC27985C5B00A498AA /* AppDelegate.swift */; };
 		25A7E3FF27985C5B00A498AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E3FE27985C5B00A498AA /* SceneDelegate.swift */; };
 		25A7E40127985C5B00A498AA /* FilesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A7E40027985C5B00A498AA /* FilesListViewController.swift */; };
@@ -194,6 +199,10 @@
 		251B96D927AC1C3C00246CAB /* FilesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesListViewModel.swift; sourceTree = "<group>"; };
 		254F123F27C6975900D7AD88 /* CSVFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVFileManager.swift; sourceTree = "<group>"; };
 		2563ACD4279B91FB00B1228F /* MotionTracking-WatchKit-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MotionTracking-WatchKit-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		25970B622AF2C8BF00044419 /* DirectoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoriesListViewController.swift; sourceTree = "<group>"; };
+		25970B642AF2C8D100044419 /* DirectoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoriesListViewModel.swift; sourceTree = "<group>"; };
+		25970B672AF2CB8700044419 /* DirectoriesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoriesListTableViewCell.swift; sourceTree = "<group>"; };
+		25970B692AF2DBF300044419 /* ManagerInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerInjector.swift; sourceTree = "<group>"; };
 		25A7E3F927985C5B00A498AA /* MotionTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25A7E3FC27985C5B00A498AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25A7E3FE27985C5B00A498AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -418,6 +427,7 @@
 			children = (
 				2502008027AAF10900952BBD /* FileTrackingManager.swift */,
 				254F123F27C6975900D7AD88 /* CSVFileManager.swift */,
+				25970B692AF2DBF300044419 /* ManagerInjector.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -438,6 +448,24 @@
 				251B96D527AC15F800246CAB /* BaseViewModel.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		25970B612AF2C89700044419 /* DirectoriesList */ = {
+			isa = PBXGroup;
+			children = (
+				25970B662AF2CB7800044419 /* View */,
+				25970B622AF2C8BF00044419 /* DirectoriesListViewController.swift */,
+				25970B642AF2C8D100044419 /* DirectoriesListViewModel.swift */,
+			);
+			path = DirectoriesList;
+			sourceTree = "<group>";
+		};
+		25970B662AF2CB7800044419 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25970B672AF2CB8700044419 /* DirectoriesListTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		25A7E3F027985C5B00A498AA = {
@@ -474,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				25A7E4862799C22B00A498AA /* Common */,
+				25970B612AF2C89700044419 /* DirectoriesList */,
 				25C34E4F27ADE2B1005FD9AA /* FilesList */,
 				25C34E5327AE8B3D005FD9AA /* ExportFile */,
 				25A7E3FC27985C5B00A498AA /* AppDelegate.swift */,
@@ -1133,12 +1162,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25970B652AF2C8D100044419 /* DirectoriesListViewModel.swift in Sources */,
+				25970B682AF2CB8700044419 /* DirectoriesListTableViewCell.swift in Sources */,
 				2502008127AAF10900952BBD /* FileTrackingManager.swift in Sources */,
 				25A7E40127985C5B00A498AA /* FilesListViewController.swift in Sources */,
 				25C34E5927AEB777005FD9AA /* BaseTableViewController.swift in Sources */,
 				25A7E3FD27985C5B00A498AA /* AppDelegate.swift in Sources */,
 				25C34E5227ADE2DA005FD9AA /* FilesListTableViewCell.swift in Sources */,
 				251B96DA27AC1C3C00246CAB /* FilesListViewModel.swift in Sources */,
+				25970B632AF2C8BF00044419 /* DirectoriesListViewController.swift in Sources */,
+				25970B6A2AF2DBF300044419 /* ManagerInjector.swift in Sources */,
 				254F124027C6975900D7AD88 /* CSVFileManager.swift in Sources */,
 				25C34E5527AE8B5A005FD9AA /* ExportFileViewController.swift in Sources */,
 				25C34E5727AE8B68005FD9AA /* ExportFileViewModel.swift in Sources */,
@@ -1179,6 +1212,7 @@
 				25A7E4BA279B6E8A00A498AA /* SettingsInterfaceController.swift in Sources */,
 				251B96CF27ABC10A00246CAB /* FileTrackingManager.swift in Sources */,
 				2502005F27A8135700952BBD /* BaseViewModel.swift in Sources */,
+				25970B6B2AF2DC6A00044419 /* ManagerInjector.swift in Sources */,
 				2502007227A9D26C00952BBD /* Constants.swift in Sources */,
 				2502007E27AADF3500952BBD /* CurrentSession.swift in Sources */,
 				2502007627AA91C800952BBD /* WKInterfacePicker+Extention.swift in Sources */,

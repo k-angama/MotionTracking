@@ -9,10 +9,7 @@ import Foundation
 import Combine
 import UIKit
 
-class FilesListViewModel: BaseViewModel {
-    
-    // Property
-    var fileTrackingManager = FileTrackingManager()
+class FilesListViewModel: BaseViewModel, ManagerInjector {
     
     /// Output observable
     @Published var isFilesExist = false
@@ -51,7 +48,9 @@ class FilesListViewModel: BaseViewModel {
         .map { [weak self] _ in
             self?.files.count ?? 0 > 0
         }
-        .assign(to: \.isFilesExist, on: self)
+        .sink(receiveValue: { [weak self] value in
+            self?.isFilesExist = value
+        })
         .store(in: &cancellable)
         
         $isFilesExist
@@ -92,17 +91,7 @@ class FilesListViewModel: BaseViewModel {
     }
     
     // MARK: Public method
-    
-    func addFile(file: URL) {
-        do {
-            let entity = try fileTrackingManager.moveCachesToSupportDirectory(fileUrl: file)
-            files.insert(entity, at: 0)
-            inserFile.send()
-        } catch {
-            self.error(error)
-        }
-    }
-    
+
     func reloadFiles() {
         files.removeAll()
         getFilesList()
@@ -139,10 +128,24 @@ class FilesListViewModel: BaseViewModel {
     
     // MARK: Private method
     
+    private func addFile(file: URL) {
+        do {
+            let entity = try fileTrackingManager.moveCachesToSupportDirectory(fileUrl: file)
+            files.insert(entity, at: 0)
+            inserFile.send()
+        } catch {
+            self.error(error)
+        }
+    }
+    
     private func getFilesList() {
         let arrayFiles = fileTrackingManager.filesTracking()
         files.append(contentsOf: arrayFiles)
         filesDidChange.send()
+    }
+    
+    deinit {
+        //UIApplication.app().connectivityManager.delegate = nil
     }
 
 }

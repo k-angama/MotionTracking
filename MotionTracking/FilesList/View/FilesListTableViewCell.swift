@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FilesListTableViewCell:UITableViewCell {
+class FilesListTableViewCell: UITableViewCell {
     
     func configuration(entity: FileTrackingEntity) {
         var content = self.defaultContentConfiguration()

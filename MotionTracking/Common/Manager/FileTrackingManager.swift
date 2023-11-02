@@ -39,9 +39,34 @@ class FileTrackingManager {
         static let extensionCSV = ".csv"
         static let extensionTXT = ".txt"
         static let location = "location"
+        static let mainNameDirectory = "Main"
+    }
+    
+    private var selectedDirectory: String
+    
+    var urlMainDirectory: URL {
+        FileManager.default.urls(
+            for: .applicationSupportDirectory,
+            in: .userDomainMask
+        )[0].appendingPathComponent("MotionTracking/")
+    }
+    
+    var urlSelectedDirectory: URL {
+        urlMainDirectory.appendingPathComponent(selectedDirectory)
     }
     
     // MARK:  Public method
+    
+    /**
+     Create the main directory if it does not exist...
+     */
+    init() {
+        self.selectedDirectory = Const.mainNameDirectory
+        let array = directories()
+        if(array.isEmpty || !array.contains(Const.mainNameDirectory)) {
+            try? FileManager.default.createDirectory(at: urlSelectedDirectory, withIntermediateDirectories: true)
+        }
+    }
     
     /**
         Add file in the cache directory
@@ -74,9 +99,28 @@ class FileTrackingManager {
      */
     func moveCachesToSupportDirectory(fileUrl: URL) throws -> FileTrackingEntity {
         let fileName = fileUrl.lastPathComponent
-        let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
+        let url = urlSelectedDirectory.appendingPathComponent(fileName)
         try FileManager.default.moveItem(atPath: fileUrl.path, toPath: url.path)
         return fileTracking(fileUrl: url)
+    }
+    
+    /**
+    Get all directories
+     
+     @return Directories array
+     */
+    func directories() -> [String] {
+        let directories = try? FileManager.default.contentsOfDirectory(atPath: urlMainDirectory.path)
+        return directories ?? []
+    }
+    
+    /**
+    Change directory
+     
+     @Param name
+     */
+    func selectDirectory(name: String) {
+        self.selectedDirectory = name
     }
     
     /**
@@ -87,7 +131,6 @@ class FileTrackingManager {
     func filesTracking() -> [FileTrackingEntity] {
 
         var arrayFile: [String]? = nil
-        let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
 #if targetEnvironment(simulator)
         arrayFile = [
             "\(nameOfTransferFile(withLocation: false, second: 5, count: 200))\(Const.extensionTXT)",
@@ -98,11 +141,11 @@ class FileTrackingManager {
             "\(nameOfTransferFile(withLocation: true, second: 12, count: 600))\(Const.extensionTXT)",
         ]
 #else
-        arrayFile = try? FileManager.default.contentsOfDirectory(atPath: url.path)
+        arrayFile = try? FileManager.default.contentsOfDirectory(atPath: urlSelectedDirectory.path)
 #endif
         return arrayFile?
             .filter { $0.contains(Const.extensionTXT) }
-            .map { fileTracking(fileUrl: url.appendingPathComponent($0)) }
+            .map { fileTracking(fileUrl: urlSelectedDirectory.appendingPathComponent($0)) }
             .sorted {
                 $0.date.compare($1.date) == .orderedDescending
             } ?? []
@@ -149,8 +192,15 @@ class FileTrackingManager {
         )
     }
     
+    /**
+        Get CSV file information
+     
+        @param array - file name information
+        @return  The file information
+     */
     private func trackingInformation(_ array: [String]) -> String {
         array.count >= 4 ? "\(array[array.endIndex - 2]) - \(array.last ?? "-") records" : "No information"
     }
+
     
 }
