@@ -33,6 +33,8 @@ struct FileTrackingEntity: Equatable {
  */
 class FileTrackingManager {
     
+    typealias DidFileAddedBlock = (_ entity: FileTrackingEntity?, _ error: Error?) -> Void
+    
     struct Const {
         static let nameFile = "tracking-file"
         static let separation = "_"
@@ -42,8 +44,19 @@ class FileTrackingManager {
         static let mainNameDirectory = "Main"
     }
     
+    // MARK: Private properties
+    
+    private let connectivityManager = ConnectivityManager()
+    
+    private var didFileAddedBlock: DidFileAddedBlock?
+    
+    
+    /// Name direcory selected
     private var selectedDirectory: String
     
+    // MARK: Public properties
+    
+    /// Main directory where all files are found
     var urlMainDirectory: URL {
         FileManager.default.urls(
             for: .applicationSupportDirectory,
@@ -51,6 +64,7 @@ class FileTrackingManager {
         )[0].appendingPathComponent("MotionTracking/")
     }
     
+    /// Url directory selected
     var urlSelectedDirectory: URL {
         urlMainDirectory.appendingPathComponent(selectedDirectory)
     }
@@ -66,6 +80,8 @@ class FileTrackingManager {
         if(array.isEmpty || !array.contains(Const.mainNameDirectory)) {
             try? FileManager.default.createDirectory(at: urlSelectedDirectory, withIntermediateDirectories: true)
         }
+        
+        connectivityManager.delegate = self
     }
     
     /**
@@ -161,6 +177,10 @@ class FileTrackingManager {
         try FileManager.default.removeItem(at: fileUrl)
     }
     
+    func didFileAdded(block: @escaping DidFileAddedBlock) {
+        didFileAddedBlock = block
+    }
+    
     // MARK: Private method
     
     /**
@@ -201,6 +221,20 @@ class FileTrackingManager {
     private func trackingInformation(_ array: [String]) -> String {
         array.count >= 4 ? "\(array[array.endIndex - 2]) - \(array.last ?? "-") records" : "No information"
     }
+    
+}
 
+// MARK: Connectivity Manager Delegate
+
+extension FileTrackingManager: ConnectivityManagerDelegate {
+    
+    func didReceiveFile(file: URL) {
+        do {
+            let entity = try self.moveCachesToSupportDirectory(fileUrl: file)
+            didFileAddedBlock?(entity, nil)
+        } catch {
+            didFileAddedBlock?(nil, error)
+        }
+    }
     
 }

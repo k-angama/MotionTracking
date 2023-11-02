@@ -33,7 +33,7 @@ class FilesListViewModel: BaseViewModel, ManagerInjector {
     override func exeUseCase() {
         super.exeUseCase()
         getFilesList()
-        UIApplication.app().connectivityManager.delegate = self
+        didFileAdded()
     }
     
     override func observers() {
@@ -128,13 +128,14 @@ class FilesListViewModel: BaseViewModel, ManagerInjector {
     
     // MARK: Private method
     
-    private func addFile(file: URL) {
-        do {
-            let entity = try fileTrackingManager.moveCachesToSupportDirectory(fileUrl: file)
-            files.insert(entity, at: 0)
-            inserFile.send()
-        } catch {
-            self.error(error)
+    private func didFileAdded() {
+        fileTrackingManager.didFileAdded { [weak self] entity, error in
+            if let error = error {
+                self?.error(error)
+            } else if let entity = entity {
+                self?.files.insert(entity, at: 0)
+                self?.inserFile.send()
+            }
         }
     }
     
@@ -143,19 +144,5 @@ class FilesListViewModel: BaseViewModel, ManagerInjector {
         files.append(contentsOf: arrayFiles)
         filesDidChange.send()
     }
-    
-    deinit {
-        //UIApplication.app().connectivityManager.delegate = nil
-    }
 
-}
-
-// MARK: Connectivity Manager Delegate
-
-extension FilesListViewModel: ConnectivityManagerDelegate {
-    
-    func didReceiveFile(file: URL) {
-        addFile(file: file)
-    }
-    
 }

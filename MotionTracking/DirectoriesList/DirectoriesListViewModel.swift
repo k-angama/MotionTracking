@@ -21,8 +21,8 @@ class DirectoriesListViewModel: BaseViewModel, ManagerInjector {
     
     override func exeUseCase() {
         super.exeUseCase()
-        UIApplication.app().connectivityManager.delegate = self
         getDirectoriesList()
+        didFileAdded()
     }
     
     // MARK: Public method
@@ -39,23 +39,14 @@ class DirectoriesListViewModel: BaseViewModel, ManagerInjector {
         directoriesDidChange.send()
     }
 
-    private func addFile(file: URL) {
-        do {
-            _ = try fileTrackingManager.moveCachesToSupportDirectory(fileUrl: file)
-        } catch {
-            self.error(error)
+    private func didFileAdded() {
+        fileTrackingManager.didFileAdded { entity, error in
+            if let error = error {
+                self.error(error)
+            } else {
+                // TODO update detail information
+            }
         }
-    }
-    
-}
-
-
-// MARK: Connectivity Manager Delegate
-
-extension DirectoriesListViewModel: ConnectivityManagerDelegate {
-    
-    func didReceiveFile(file: URL) {
-        addFile(file: file)
     }
     
 }
