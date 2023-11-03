@@ -9,9 +9,10 @@ import UIKit
 
 class DirectoriesListTableViewCell: UITableViewCell {
     
-    func configuration(entity: String) {
+    func configuration(entity: DirectoryEntity) {
         var content = self.defaultContentConfiguration()
-        content.text = entity
+        content.text = entity.name
+        content.secondaryText = "\(entity.numberFile)"
         content.image = UIImage(systemName: "folder", withConfiguration: nil)
         self.contentConfiguration = content
     }

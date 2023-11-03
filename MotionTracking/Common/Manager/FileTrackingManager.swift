@@ -25,6 +25,10 @@ struct FileTrackingEntity: Equatable {
     }
 }
 
+struct DirectoryEntity {
+    let name: String
+    let numberFile: Int
+}
 
 
 /**
@@ -33,7 +37,7 @@ struct FileTrackingEntity: Equatable {
  */
 class FileTrackingManager {
     
-    typealias DidFileAddedBlock = (_ entity: FileTrackingEntity?, _ error: Error?) -> Void
+    typealias FileBlock = (_ entity: FileTrackingEntity?, _ error: Error?) -> Void
     
     struct Const {
         static let nameFile = "tracking-file"
@@ -46,10 +50,9 @@ class FileTrackingManager {
     
     // MARK: Private properties
     
-    private let connectivityManager = ConnectivityManager()
+    private let connectivityManager: ConnectivityManager
     
-    private var didFileAddedBlock: DidFileAddedBlock?
-    
+    private var didFileAddedBlock: FileBlock?
     
     /// Name direcory selected
     private var selectedDirectory: String
@@ -74,10 +77,15 @@ class FileTrackingManager {
     /**
      Create the main directory if it does not exist...
      */
-    init() {
+    init(connectivityManager: ConnectivityManager) {
+        
+        self.connectivityManager = connectivityManager
         self.selectedDirectory = Const.mainNameDirectory
+        
         let array = directories()
-        if(array.isEmpty || !array.contains(Const.mainNameDirectory)) {
+        if(array.isEmpty || !array.contains(where: { entity in
+            entity.name == Const.mainNameDirectory
+        })) {
             try? FileManager.default.createDirectory(at: urlSelectedDirectory, withIntermediateDirectories: true)
         }
         
@@ -125,9 +133,15 @@ class FileTrackingManager {
      
      @return Directories array
      */
-    func directories() -> [String] {
+    func directories() -> [DirectoryEntity] {
         let directories = try? FileManager.default.contentsOfDirectory(atPath: urlMainDirectory.path)
-        return directories ?? []
+
+        return directories?.compactMap({ name in
+            let arrayFile = try? FileManager.default
+                .contentsOfDirectory(atPath: urlMainDirectory.appendingPathComponent(name).path)
+                
+            return DirectoryEntity(name: name, numberFile: arrayFile?.count ?? 0)
+        }) ?? []
     }
     
     /**
@@ -173,11 +187,11 @@ class FileTrackingManager {
      
         @param fileUrl - The file  url
      */
-    func removeFile(fileUrl: URL) throws {
-        try FileManager.default.removeItem(at: fileUrl)
+    func removeFile(entity: FileTrackingEntity) throws {
+        try FileManager.default.removeItem(at: entity.fileUrl)
     }
     
-    func didFileAdded(block: @escaping DidFileAddedBlock) {
+    func didFileAdded(block: @escaping FileBlock) {
         didFileAddedBlock = block
     }
     

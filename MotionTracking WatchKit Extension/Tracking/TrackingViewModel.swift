@@ -9,10 +9,9 @@ import Foundation
 import WatchKit
 import Combine
 
-class TrackingViewModel: BaseViewModel {
+class TrackingViewModel: BaseViewModel, ManagerInjector {
     
     /// Propertie
-    let fileTrackingManager = FileTrackingManager()
     var motionManager: MotionManager?
     var timer: Timer?
     
@@ -76,7 +75,7 @@ class TrackingViewModel: BaseViewModel {
             )
             
             // Transfer json file to iPhone
-            WKExtension.app().connectivityManager.sendFile(file: filePath)
+            connectivityManager.sendFile(file: filePath)
             isFileSaved.send(())
             isFileSaved.send(completion: .finished)
         } catch {

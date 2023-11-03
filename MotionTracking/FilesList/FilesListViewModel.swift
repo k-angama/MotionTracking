@@ -23,6 +23,7 @@ class FilesListViewModel: BaseViewModel, ManagerInjector {
     var filesDidChange = PassthroughSubject<Void, Never>()
     var removeFiles = PassthroughSubject<[Int], Never>()
     var inserFile = PassthroughSubject<Void, Never>()
+    var removeFileEntity  = PassthroughSubject<FileTrackingEntity, Never>()
     
     /// Output property
     var files = [FileTrackingEntity]()
@@ -99,7 +100,9 @@ class FilesListViewModel: BaseViewModel, ManagerInjector {
     
     func removeFile(index: Int) {
         do {
-            try fileTrackingManager.removeFile(fileUrl: files[index].fileUrl)
+            let entity = files[index]
+            try fileTrackingManager.removeFile(entity: entity)
+            removeFileEntity.send(entity)
             files.remove(at: index)
             removeFiles.send([index])
         } catch {
@@ -111,7 +114,8 @@ class FilesListViewModel: BaseViewModel, ManagerInjector {
         var index: [Int:FileTrackingEntity] = [:]
         do {
             for entity in filesSelected {
-                try fileTrackingManager.removeFile(fileUrl: entity.fileUrl)
+                try fileTrackingManager.removeFile(entity: entity)
+                removeFileEntity.send(entity)
                 if let i = files.firstIndex(where: { $0 == entity }) {
                     index[i] = entity
                 }

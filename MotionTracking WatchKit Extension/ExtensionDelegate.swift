@@ -9,8 +9,6 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
-    let connectivityManager = ConnectivityManager()
-    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
     }

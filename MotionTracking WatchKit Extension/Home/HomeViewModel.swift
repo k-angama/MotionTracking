@@ -9,7 +9,7 @@ import Foundation
 import WatchKit
 import Combine
 
-class HomeViewModel: BaseViewModel {
+class HomeViewModel: BaseViewModel, ManagerInjector {
     
     /// Propertie
     var motionManager:MotionManager?
@@ -26,7 +26,7 @@ class HomeViewModel: BaseViewModel {
     
     override func setup() {
         super.setup()
-        WKExtension.app().connectivityManager.delegate = self
+        connectivityManager.delegate = self
         setupFiletranfertIndicator()
     }
     
@@ -48,7 +48,7 @@ class HomeViewModel: BaseViewModel {
         
     private func setupFiletranfertIndicator() {
         
-        if WKExtension.app().connectivityManager.isFileTransfer {
+        if connectivityManager.isFileTransfer {
             isShowLoaderIndicator = true
         }
     }

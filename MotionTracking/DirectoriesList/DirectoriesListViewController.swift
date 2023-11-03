@@ -14,6 +14,11 @@ class DirectoriesListViewController: BaseViewController<DirectoriesListViewModel
     
     // MARK: Override methode
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.didFileAdded()
+    }
+    
     override func setupUI() {
         super.setupUI()
     } 
@@ -28,6 +33,23 @@ class DirectoriesListViewController: BaseViewController<DirectoriesListViewModel
                 self?.reloadData()
             }
             .store(in: &cancellable)
+        
+        viewModel.reloadRows
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] index in
+                self?.reloadRows(index: index)
+            }
+            .store(in: &cancellable)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? FilesListViewController {
+            viewController.viewModel.removeFileEntity
+                .sink { [weak self] entity in
+                    self?.viewModel.removeFileEntity.send(entity)
+                }
+                .store(in: &cancellable)
+        }
     }
     
     // MARK: Private methode
@@ -36,7 +58,12 @@ class DirectoriesListViewController: BaseViewController<DirectoriesListViewModel
         tableView.reloadData()
     }
     
+    private func reloadRows(index: Int) {
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+    
     @IBAction func addDirectory(_ sender: Any) {
+        
     }
     
 }
