@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cf0-FS-sP1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cf0-FS-sP1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -202,12 +202,41 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="4Yq-cn-nrX">
+                                        <rect key="frame" x="20" y="319" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yq-cn-nrX" id="Rrv-CX-qOe">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ju7-8Q-4lX">
+                                                    <rect key="frame" x="305" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="attitudeChange:" destination="Ljb-24-ez2" eventType="valueChanged" id="eSh-Bp-tb8"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRp-ZF-KTI">
+                                                    <rect key="frame" x="20" y="11.5" width="277" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ju7-8Q-4lX" firstAttribute="leading" secondItem="CRp-ZF-KTI" secondAttribute="trailing" constant="8" symbolic="YES" id="eeH-Ih-0Na"/>
+                                                <constraint firstAttribute="trailing" secondItem="ju7-8Q-4lX" secondAttribute="trailing" constant="20" symbolic="YES" id="rbH-HT-Erm"/>
+                                                <constraint firstItem="ju7-8Q-4lX" firstAttribute="centerY" secondItem="Rrv-CX-qOe" secondAttribute="centerY" id="roz-nh-ad8"/>
+                                                <constraint firstItem="CRp-ZF-KTI" firstAttribute="centerY" secondItem="Rrv-CX-qOe" secondAttribute="centerY" id="t8h-WY-HOK"/>
+                                                <constraint firstItem="CRp-ZF-KTI" firstAttribute="leading" secondItem="Rrv-CX-qOe" secondAttribute="leadingMargin" id="yiQ-QK-X6J"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Location" footerTitle="Add location to data." id="8rk-pW-2q7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="dPQ-Yv-LoQ">
-                                        <rect key="frame" x="20" y="394.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="438" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dPQ-Yv-LoQ" id="R4B-GI-30o">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -236,7 +265,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="BqA-KV-wd1">
-                                        <rect key="frame" x="20" y="438" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="481.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BqA-KV-wd1" id="gZB-KR-SZZ">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
@@ -287,6 +316,7 @@
                     <connections>
                         <outlet property="accelerationSwitch" destination="LEV-aE-F3G" id="xy5-rT-gSY"/>
                         <outlet property="altitudeSwitch" destination="vHQ-KU-C8m" id="lU4-dl-2db"/>
+                        <outlet property="attitudeSwitch" destination="ju7-8Q-4lX" id="3rU-EI-Zk9"/>
                         <outlet property="cordinateSwitch" destination="eJO-IC-3Vz" id="2dO-Cv-XD2"/>
                         <outlet property="exportButton" destination="eZD-6v-EhH" id="DGP-ul-pHN"/>
                         <outlet property="gravitySwitch" destination="P6I-TW-ogH" id="Es2-pY-K2A"/>

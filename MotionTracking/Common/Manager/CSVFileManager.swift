@@ -13,7 +13,7 @@ import SSZipArchive
  Entity CSV file fields
  
  */
-struct CSVFileFields: Codable {
+struct CSVFileFields: Codable, Equatable {
     
     let timestamp: Bool
     let gravityX: Bool
@@ -22,6 +22,9 @@ struct CSVFileFields: Codable {
     let rotationRateX: Bool
     let rotationRateY: Bool
     let rotationRateZ: Bool
+    let userAccelerationX: Bool
+    let userAccelerationY: Bool
+    let userAccelerationZ: Bool
     let attitudeRoll: Bool
     let attitudePitch: Bool
     let attitudeYaw: Bool
@@ -29,16 +32,26 @@ struct CSVFileFields: Codable {
     let locationLongitude: Bool
     let locationAltitude: Bool
     
-    /// Convert the entity to dictionary
-    var dictionary: [String: Bool]? {
-        let json = JSONEncoder()
-        guard let data = try? json.encode(self) else { return nil }
-        return (try? JSONSerialization.jsonObject(
-            with: data,
-            options: .allowFragments)
-        )
-            .flatMap { $0 as? [String: Bool] }
-    }
+    var orderedFields: [(String, Bool)] {
+            return [
+                ("timestamp", timestamp),
+                ("gravityX", gravityX),
+                ("gravityY", gravityY),
+                ("gravityZ", gravityZ),
+                ("rotationRateX", rotationRateX),
+                ("rotationRateY", rotationRateY),
+                ("rotationRateZ", rotationRateZ),
+                ("userAccelerationX", userAccelerationX),
+                ("userAccelerationY", userAccelerationY),
+                ("userAccelerationZ", userAccelerationZ),
+                ("attitudeRoll", attitudeRoll),
+                ("attitudePitch", attitudePitch),
+                ("attitudeYaw", attitudeYaw),
+                ("locationLatitude", locationLatitude),
+                ("locationLongitude", locationLongitude),
+                ("locationAltitude", locationAltitude)
+            ]
+        }
     
     init(timestamp: Bool = true,
          gravityX: Bool = true,
@@ -47,12 +60,15 @@ struct CSVFileFields: Codable {
          rotationRateX: Bool = true,
          rotationRateY: Bool = true,
          rotationRateZ: Bool = true,
+         userAccelerationX: Bool = true,
+         userAccelerationY: Bool = true,
+         userAccelerationZ: Bool = true,
          attitudeRoll: Bool = true,
          attitudePitch: Bool = true,
          attitudeYaw: Bool = true,
-         latitude: Bool = true,
-         longitude: Bool = true,
-         altitude: Bool = true
+         locationLatitude: Bool = true,
+         locationLongitude: Bool = true,
+         locationAltitude: Bool = true
     ) {
         self.timestamp = timestamp
         self.gravityX = gravityX
@@ -61,12 +77,15 @@ struct CSVFileFields: Codable {
         self.rotationRateX = rotationRateX
         self.rotationRateY = rotationRateY
         self.rotationRateZ = rotationRateZ
+        self.userAccelerationX = userAccelerationX
+        self.userAccelerationY = userAccelerationY
+        self.userAccelerationZ = userAccelerationZ
         self.attitudeRoll = attitudeRoll
         self.attitudePitch = attitudePitch
         self.attitudeYaw = attitudeYaw
-        self.locationLatitude = latitude
-        self.locationLongitude = longitude
-        self.locationAltitude = altitude
+        self.locationLatitude = locationLatitude
+        self.locationLongitude = locationLongitude
+        self.locationAltitude = locationAltitude
     }
 }
 
@@ -181,11 +200,7 @@ class CSVFileManager {
      @return   Array fields
      */
     private func getFields() -> [String] {
-        guard let dic = fields.dictionary else { return [] }
-        return dic.compactMap{
-            if $1 { return $0 }
-            return nil
-        }.sorted().reversed()
+        fields.orderedFields.compactMap { $1 ? $0 : nil }
     }
     
 }

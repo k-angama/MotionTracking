@@ -92,6 +92,7 @@
 		25C34E5727AE8B68005FD9AA /* ExportFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C34E5627AE8B68005FD9AA /* ExportFileViewModel.swift */; };
 		25C34E5927AEB777005FD9AA /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C34E5827AEB777005FD9AA /* BaseTableViewController.swift */; };
 		25E5D0D527CAA4F80018197E /* FieldsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E5D0D427CAA4F80018197E /* FieldsMapper.swift */; };
+		25F7F6B82BA99D5400A62017 /* ExportFileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F7F6B72BA99D5400A62017 /* ExportFileViewModelTests.swift */; };
 		40635C4DE7FB9C6AF832FC3F /* Pods_MotionTracking_WatchKit_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB44BEBC0E83F4248D083ED /* Pods_MotionTracking_WatchKit_AppTests.framework */; };
 		8C346B1114FE817384B2BE46 /* Pods_MotionTracking_WatchKit_App_MotionTracking_WatchKit_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA897270CC9E0E61AF4A0619 /* Pods_MotionTracking_WatchKit_App_MotionTracking_WatchKit_AppUITests.framework */; };
 		8DDDE58FE68B9C02F58715C0 /* Pods_MotionTracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35616EE0C1CC1F843D5A452D /* Pods_MotionTracking.framework */; };
@@ -260,6 +261,7 @@
 		25C34E5627AE8B68005FD9AA /* ExportFileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFileViewModel.swift; sourceTree = "<group>"; };
 		25C34E5827AEB777005FD9AA /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		25E5D0D427CAA4F80018197E /* FieldsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsMapper.swift; sourceTree = "<group>"; };
+		25F7F6B72BA99D5400A62017 /* ExportFileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFileViewModelTests.swift; sourceTree = "<group>"; };
 		2D89BE13EB63FCE69042F41F /* Pods-MotionTracking WatchKit AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit AppTests.release.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit AppTests/Pods-MotionTracking WatchKit AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		35616EE0C1CC1F843D5A452D /* Pods_MotionTracking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotionTracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		380D02197F64F029CAD3E5A8 /* Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.release.xcconfig"; path = "Target Support Files/Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests/Pods-MotionTracking WatchKit App-MotionTracking WatchKit AppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				25A7E41327985C5E00A498AA /* MotionTrackingTests.swift */,
+				25F7F6B72BA99D5400A62017 /* ExportFileViewModelTests.swift */,
 			);
 			path = MotionTrackingTests;
 			sourceTree = "<group>";
@@ -1155,6 +1158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F7F6B82BA99D5400A62017 /* ExportFileViewModelTests.swift in Sources */,
 				25A7E41427985C5E00A498AA /* MotionTrackingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
