@@ -19,6 +19,7 @@ class ExportFileViewController: BaseTableViewController<ExportFileViewModel> {
     @IBOutlet weak var accelerationSwitch: UISwitch!
     @IBOutlet weak var cordinateSwitch: UISwitch!
     @IBOutlet weak var altitudeSwitch: UISwitch!
+    @IBOutlet weak var attitudeSwitch: UISwitch!
     
     private lazy var refreshBarButton: UIBarButtonItem = {
         let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(style: .medium)
@@ -85,6 +86,12 @@ class ExportFileViewController: BaseTableViewController<ExportFileViewModel> {
             .assign(to: \.isOn, on: altitudeSwitch)
             .store(in: &cancellable)
         
+        // The switch is on if the attitude value is true
+        viewModel.$attitudeValue
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isOn, on: attitudeSwitch)
+            .store(in: &cancellable)
+        
         // The switch is on if the cordinate value is true
         viewModel.$cordinateValue
             .receive(on: DispatchQueue.main)
@@ -144,6 +151,10 @@ class ExportFileViewController: BaseTableViewController<ExportFileViewModel> {
     
     @IBAction func altitudeChange(_ sender: UISwitch) {
         viewModel.altitudeValue = sender.isOn
+    }
+    
+    @IBAction func attitudeChange(_ sender: UISwitch) {
+        viewModel.attitudeValue = sender.isOn
     }
     
     // MARK: Private method

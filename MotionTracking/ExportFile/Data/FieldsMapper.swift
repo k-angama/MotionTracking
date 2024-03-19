@@ -9,7 +9,7 @@ import Foundation
 
 struct FieldsMapper {
     
-    static func mapper(_ motion: (Bool, Bool, Bool, Bool), _ location: (Bool, Bool)) -> CSVFileFields {
+    static func mapper(_ motion: (Bool, Bool, Bool, Bool, Bool), _ location: (Bool, Bool)) -> CSVFileFields {
          CSVFileFields(
             timestamp: motion.0,
             gravityX: motion.1,
@@ -18,12 +18,15 @@ struct FieldsMapper {
             rotationRateX: motion.2,
             rotationRateY: motion.2,
             rotationRateZ: motion.2,
-            attitudeRoll: motion.3,
-            attitudePitch: motion.3,
-            attitudeYaw: motion.3,
-            latitude: location.0,
-            longitude: location.0,
-            altitude: location.1
+            userAccelerationX: motion.3,
+            userAccelerationY: motion.3,
+            userAccelerationZ: motion.3,
+            attitudeRoll: motion.4,
+            attitudePitch: motion.4,
+            attitudeYaw: motion.4,
+            locationLatitude: location.0,
+            locationLongitude: location.0,
+            locationAltitude: location.1
         )
     }
     
